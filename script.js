@@ -1,7 +1,49 @@
 /* ==========================================================================
    KULFI CORNER — MAIN SCRIPT
-   Smooth Continuous Scrolling, ScrollSpy, Reveal Animations & Interactivity
+   Smooth Continuous Scrolling, Category Tabs, ScrollSpy, Reveal Animations
    ========================================================================== */
+
+/* Global Category / Format Switcher */
+window.switchKulfiTab = function (format) {
+    // 1. Update Tab Buttons
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    tabBtns.forEach(function (btn) {
+        if (btn.getAttribute('data-format') === format) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+
+    // 2. Update Format Highlight Card Buttons
+    const formatCards = document.querySelectorAll('.format-card');
+    formatCards.forEach(function (card) {
+        const btn = card.querySelector('.format-select-btn');
+        if (card.getAttribute('data-target-tab') === format) {
+            if (btn) btn.classList.add('active-btn');
+        } else {
+            if (btn) btn.classList.remove('active-btn');
+        }
+    });
+
+    // 3. Switch Format Panels
+    const panels = document.querySelectorAll('.format-panel');
+    panels.forEach(function (panel) {
+        panel.classList.remove('active-panel');
+    });
+
+    const targetPanel = document.getElementById('panel-' + format);
+    if (targetPanel) {
+        targetPanel.classList.add('active-panel');
+
+        // Trigger reveal animations on any cards inside target panel
+        const panelReveals = targetPanel.querySelectorAll('.reveal');
+        panelReveals.forEach(function (el) {
+            el.classList.add('is-visible');
+        });
+    }
+};
+
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -32,9 +74,9 @@ document.addEventListener("DOMContentLoaded", function () {
        2. SMOOTH SCROLLING WITH PRECISE NAVBAR OFFSET
        ========================================================================== */
 
-    const navLinks = document.querySelectorAll('.nav-link, .hero-btn, .details-btn, .story-cta-btn, .cta-banner-primary, .cta-banner-secondary, .promise-btn, .coming-btn, .view-all-btn, .footer-links a');
+    const scrollLinks = document.querySelectorAll('.nav-link, .hero-btn, .details-btn, .story-cta-btn, .cta-banner-primary, .cta-banner-secondary, .promise-btn, .coming-btn, .view-all-btn, .footer-links a');
 
-    navLinks.forEach(function (link) {
+    scrollLinks.forEach(function (link) {
         link.addEventListener("click", function (e) {
             const href = link.getAttribute("href");
 
@@ -46,7 +88,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (targetEl) {
                     e.preventDefault();
 
-                    // Calculate navbar height dynamically
                     const navbar = document.querySelector(".navbar");
                     const navHeight = navbar ? navbar.offsetHeight : 90;
 
@@ -71,7 +112,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* ==========================================================================
        3. ACTIVE NAVBAR ITEM (SCROLLSPY)
-       Detects currently visible section and underlines the active link
        ========================================================================== */
 
     const sections = [
@@ -101,12 +141,10 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        // If at top of page, force home active
         if (window.pageYOffset < 150) {
             currentSectionId = "home";
         }
 
-        // If scrolled to very bottom, activate contact
         if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 80) {
             currentSectionId = "contact";
         }
@@ -141,15 +179,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
         }, {
-            threshold: 0.12,
-            rootMargin: "0px 0px -40px 0px"
+            threshold: 0.10,
+            rootMargin: "0px 0px -30px 0px"
         });
 
         revealElements.forEach(function (el) {
             revealObserver.observe(el);
         });
     } else {
-        // Fallback for older browsers
         revealElements.forEach(function (el) {
             el.classList.add("is-visible");
         });
@@ -200,7 +237,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
         });
 
-        // Location cards pan to map marker
         const cards = document.querySelectorAll(".location-card");
         cards.forEach(function (card) {
             card.addEventListener("click", function () {

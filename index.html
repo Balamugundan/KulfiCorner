@@ -101,7 +101,7 @@
 
                 <p class="hero-description">
                     Made with pure milk, natural ingredients
-                    & authentic Indian recipes.
+                    & authentic Indian recipes across multiple traditional formats.
                 </p>
 
                 <div class="hero-buttons">
@@ -148,7 +148,7 @@
     <main>
 
         <!-- =====================================================
-             2. OUR KULFIS SECTION
+             2. OUR KULFIS SECTION — MULTIPLE FORMATS & VARIETIES
         ====================================================== -->
 
         <section class="our-kulfis" id="our-kulfis">
@@ -156,7 +156,7 @@
             <div class="kulfis-header reveal">
 
                 <p class="kulfis-label">
-                    AUTHENTIC INDIAN KULFI
+                    EXPLORE OUR VARIETIES
                 </p>
 
                 <h2>
@@ -164,111 +164,587 @@
                 </h2>
 
                 <p class="kulfis-intro">
-                    Traditional recipes, premium ingredients
-                    and unforgettable taste in every bite.
+                    Experience authentic Indian kulfi in multiple physical formats —
+                    from classic stick kulfis to rustic earthen pots, traditional slices, and family tubs.
                 </p>
 
             </div>
 
 
-            <!-- TOP SELLING TITLE -->
-            <div class="top-selling-title reveal">
-                <span></span>
-                <h3>Top Selling Kulfis</h3>
-                <span></span>
-            </div>
+            <!-- 4 KULFI FORMAT HIGHLIGHT CARDS -->
+            <div class="format-showcase-grid reveal">
 
-
-            <!-- PRODUCTS GRID -->
-            <div class="kulfi-grid">
-
-                <!-- 01 MALAI -->
-                <div class="kulfi-card reveal reveal-delay-1">
-                    <div class="kulfi-photo">
-                        <img src="Malai.png" alt="Malai Kulfi">
-                        <span class="kulfi-tag">BEST SELLER</span>
+                <!-- FORMAT 1: STICK KULFI -->
+                <div class="format-card" data-target-tab="stick">
+                    <div class="format-card-icon-wrap">
+                        <span class="format-icon">🍦</span>
+                        <span class="format-count-badge">19 Flavours</span>
                     </div>
-                    <div class="kulfi-details">
-                        <span class="kulfi-no">01</span>
-                        <h3>Malai</h3>
-                        <p>Rich, creamy and traditionally made with pure milk.</p>
-                        <div class="kulfi-footer">
-                            <strong>₹60</strong>
-                            <a href="product.html?product=malai" class="details-btn">
-                                VIEW DETAILS
-                                <span>→</span>
-                            </a>
-                        </div>
-                    </div>
+                    <h3>Stick Kulfi</h3>
+                    <p>The iconic handheld delicacy on wooden sticks, crafted in 19 authentic royal flavours.</p>
+                    <button type="button" class="format-select-btn active-btn" onclick="switchKulfiTab('stick')">
+                        VIEW STICK KULFIS →
+                    </button>
                 </div>
 
-                <!-- 02 KESAR BADAM -->
-                <div class="kulfi-card reveal reveal-delay-2">
-                    <div class="kulfi-photo">
-                        <img src="Kesar.png" alt="Kesar Badam Kulfi">
-                        <span class="kulfi-tag">POPULAR</span>
+                <!-- FORMAT 2: POT KULFI -->
+                <div class="format-card" data-target-tab="pot">
+                    <div class="format-card-icon-wrap">
+                        <span class="format-icon">🏺</span>
+                        <span class="format-count-badge">Earthen Matka</span>
                     </div>
-                    <div class="kulfi-details">
-                        <span class="kulfi-no">02</span>
-                        <h3>Kesar Badam</h3>
-                        <p>Fragrant saffron blended with premium almonds.</p>
-                        <div class="kulfi-footer">
-                            <strong>₹70</strong>
-                            <a href="product.html?product=kesarBadam" class="details-btn">
-                                VIEW DETAILS
-                                <span>→</span>
-                            </a>
-                        </div>
-                    </div>
+                    <h3>Pot Kulfi</h3>
+                    <p>Slow-cooked rich kulfi served in rustic clay pots that infuse natural earthy aroma.</p>
+                    <button type="button" class="format-select-btn" onclick="switchKulfiTab('pot')">
+                        VIEW POT KULFIS →
+                    </button>
                 </div>
 
-                <!-- 03 KESAR PISTA -->
-                <div class="kulfi-card reveal reveal-delay-3">
-                    <div class="kulfi-photo">
-                        <img src="Kesar pista .png" alt="Kesar Pista Kulfi">
+                <!-- FORMAT 3: SLICE KULFI -->
+                <div class="format-card" data-target-tab="slice">
+                    <div class="format-card-icon-wrap">
+                        <span class="format-icon">🍰</span>
+                        <span class="format-count-badge">Classic Roll</span>
                     </div>
-                    <div class="kulfi-details">
-                        <span class="kulfi-no">03</span>
-                        <h3>Kesar Pista</h3>
-                        <p>A delicious combination of saffron and crunchy almonds.</p>
-                        <div class="kulfi-footer">
-                            <strong>₹70</strong>
-                            <a href="product.html?product=kesarPista" class="details-btn">
-                                VIEW DETAILS
-                                <span>→</span>
-                            </a>
-                        </div>
-                    </div>
+                    <h3>Slice Kulfi</h3>
+                    <p>Traditional cylindrical kulfi logs cut into rich, creamy round slices garnished with nuts.</p>
+                    <button type="button" class="format-select-btn" onclick="switchKulfiTab('slice')">
+                        VIEW SLICE KULFIS →
+                    </button>
                 </div>
 
-                <!-- 04 PISTA BADAM -->
-                <div class="kulfi-card reveal reveal-delay-4">
-                    <div class="kulfi-photo">
-                        <img src="Pista padam.png" alt="Pista Badam Kulfi">
+                <!-- FORMAT 4: TUB KULFI -->
+                <div class="format-card" data-target-tab="tub">
+                    <div class="format-card-icon-wrap">
+                        <span class="format-icon">🍨</span>
+                        <span class="format-count-badge">Family Pack</span>
                     </div>
-                    <div class="kulfi-details">
-                        <span class="kulfi-no">04</span>
-                        <h3>Pista Badam</h3>
-                        <p>Creamy kulfi filled with pistachios and premium almonds.</p>
-                        <div class="kulfi-footer">
-                            <strong>₹70</strong>
-                            <a href="product.html?product=pistaBadam" class="details-btn">
-                                VIEW DETAILS
-                                <span>→</span>
-                            </a>
-                        </div>
-                    </div>
+                    <h3>Tub Kulfi</h3>
+                    <p>Generous party and family tubs perfect for celebrations, gatherings, and home dining.</p>
+                    <button type="button" class="format-select-btn" onclick="switchKulfiTab('tub')">
+                        VIEW TUB KULFIS →
+                    </button>
                 </div>
 
             </div>
 
 
-            <!-- VIEW ALL -->
-            <div class="view-all-kulfis reveal">
-                <a href="#our-kulfis" class="view-all-btn">
-                    VIEW ALL KULFIS
-                    <span>→</span>
-                </a>
+            <!-- CATEGORY FILTER TABS -->
+            <div class="category-tabs-container reveal">
+                <div class="category-tabs" id="kulfiTabs" role="tablist">
+                    <button class="tab-btn active" data-format="stick" onclick="switchKulfiTab('stick')">
+                        🍦 STICK KULFI <span class="tab-count">(19)</span>
+                    </button>
+                    <button class="tab-btn" data-format="pot" onclick="switchKulfiTab('pot')">
+                        🏺 POT KULFI
+                    </button>
+                    <button class="tab-btn" data-format="slice" onclick="switchKulfiTab('slice')">
+                        🍰 SLICE KULFI
+                    </button>
+                    <button class="tab-btn" data-format="tub" onclick="switchKulfiTab('tub')">
+                        🍨 TUB KULFI
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- =================================================
+                 TAB 1: STICK KULFI PANEL (19 CONFIRMED PRODUCTS)
+            ================================================== -->
+
+            <div id="panel-stick" class="format-panel active-panel">
+
+                <div class="top-selling-title reveal">
+                    <span></span>
+                    <h3>Stick Kulfi Collection (19 Flavours)</h3>
+                    <span></span>
+                </div>
+
+                <div class="kulfi-grid">
+
+                    <!-- 01 DRY FRUITS & NUTS -->
+                    <div class="kulfi-card reveal reveal-delay-1">
+                        <div class="kulfi-photo">
+                            <img src="Pista padam.png" alt="Dry Fruits & Nuts Kulfi">
+                            <span class="kulfi-tag">ROYAL CRUNCH</span>
+                        </div>
+                        <div class="kulfi-details">
+                            <span class="kulfi-no">01</span>
+                            <h3>Dry Fruits & Nuts – Large</h3>
+                            <p>Rich creamy kulfi loaded with roasted cashews, almonds and pistachios.</p>
+                            <div class="kulfi-footer">
+                                <span class="kulfi-badge-format">Stick Kulfi</span>
+                                <a href="product.html?product=dryFruitsNuts" class="details-btn">
+                                    VIEW DETAILS <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 02 PAAN MASALA -->
+                    <div class="kulfi-card reveal reveal-delay-2">
+                        <div class="kulfi-photo">
+                            <img src="Hero section.png" alt="Paan Masala Kulfi">
+                            <span class="kulfi-tag">HERBAL REFRESH</span>
+                        </div>
+                        <div class="kulfi-details">
+                            <span class="kulfi-no">02</span>
+                            <h3>Paan Masala – Large</h3>
+                            <p>Authentic refreshing cooling flavours of betel leaves and fragrant gulkand.</p>
+                            <div class="kulfi-footer">
+                                <span class="kulfi-badge-format">Stick Kulfi</span>
+                                <a href="product.html?product=paanMasala" class="details-btn">
+                                    VIEW DETAILS <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 03 BUTTERSCOTCH -->
+                    <div class="kulfi-card reveal reveal-delay-3">
+                        <div class="kulfi-photo">
+                            <img src="Kesar.png" alt="Butterscotch Kulfi">
+                            <span class="kulfi-tag">SWEET CRUNCH</span>
+                        </div>
+                        <div class="kulfi-details">
+                            <span class="kulfi-no">03</span>
+                            <h3>Butterscotch Kulfi</h3>
+                            <p>Sweet caramelized butterscotch crunch and natural buttery aroma.</p>
+                            <div class="kulfi-footer">
+                                <span class="kulfi-badge-format">Stick Kulfi</span>
+                                <a href="product.html?product=butterscotch" class="details-btn">
+                                    VIEW DETAILS <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 04 ELAICHI SPECIAL -->
+                    <div class="kulfi-card reveal reveal-delay-4">
+                        <div class="kulfi-photo">
+                            <img src="Malai.png" alt="Elaichi Special Kulfi">
+                            <span class="kulfi-tag">HERITAGE CLASSIC</span>
+                        </div>
+                        <div class="kulfi-details">
+                            <span class="kulfi-no">04</span>
+                            <h3>Elaichi Special – Large</h3>
+                            <p>Infused with aromatic, hand-crushed green cardamom and simmered cream.</p>
+                            <div class="kulfi-footer">
+                                <span class="kulfi-badge-format">Stick Kulfi</span>
+                                <a href="product.html?product=elaichiSpecial" class="details-btn">
+                                    VIEW DETAILS <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 05 ALPHONSO MANGO MALAI -->
+                    <div class="kulfi-card reveal reveal-delay-1">
+                        <div class="kulfi-photo">
+                            <img src="Kesar.png" alt="Alphonso Mango Malai Kulfi">
+                            <span class="kulfi-tag">SEASONAL FAVORITE</span>
+                        </div>
+                        <div class="kulfi-details">
+                            <span class="kulfi-no">05</span>
+                            <h3>Alphonso Mango Malai – Large</h3>
+                            <p>Ripe Ratnagiri Alphonso mango pulp blended with thick simmered malai.</p>
+                            <div class="kulfi-footer">
+                                <span class="kulfi-badge-format">Stick Kulfi</span>
+                                <a href="product.html?product=alphonsoMango" class="details-btn">
+                                    VIEW DETAILS <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 06 LITCHI -->
+                    <div class="kulfi-card reveal reveal-delay-2">
+                        <div class="kulfi-photo">
+                            <img src="Malai.png" alt="Litchi Kulfi">
+                            <span class="kulfi-tag">GOURMET TWIST</span>
+                        </div>
+                        <div class="kulfi-details">
+                            <span class="kulfi-no">06</span>
+                            <h3>Litchi Kulfi – Large</h3>
+                            <p>Delicate litchi sweetness and velvety smooth kulfi texture.</p>
+                            <div class="kulfi-footer">
+                                <span class="kulfi-badge-format">Stick Kulfi</span>
+                                <a href="product.html?product=litchi" class="details-btn">
+                                    VIEW DETAILS <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 07 CARAMEL COFFEE -->
+                    <div class="kulfi-card reveal reveal-delay-3">
+                        <div class="kulfi-photo">
+                            <img src="Pista padam.png" alt="Caramel Coffee Kulfi">
+                            <span class="kulfi-tag">MODERN BLEND</span>
+                        </div>
+                        <div class="kulfi-details">
+                            <span class="kulfi-no">07</span>
+                            <h3>Caramel Coffee – Large</h3>
+                            <p>Bold roasted South Indian coffee with sweet golden caramel ribbons.</p>
+                            <div class="kulfi-footer">
+                                <span class="kulfi-badge-format">Stick Kulfi</span>
+                                <a href="product.html?product=caramelCoffee" class="details-btn">
+                                    VIEW DETAILS <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 08 STRAWBERRY -->
+                    <div class="kulfi-card reveal reveal-delay-4">
+                        <div class="kulfi-photo">
+                            <img src="Hero section.png" alt="Strawberry Kulfi">
+                            <span class="kulfi-tag">FRUITY DELIGHT</span>
+                        </div>
+                        <div class="kulfi-details">
+                            <span class="kulfi-no">08</span>
+                            <h3>Strawberry Kulfi – Large</h3>
+                            <p>Fragrant strawberry fruit essence blended harmoniously with thick kulfi.</p>
+                            <div class="kulfi-footer">
+                                <span class="kulfi-badge-format">Stick Kulfi</span>
+                                <a href="product.html?product=strawberry" class="details-btn">
+                                    VIEW DETAILS <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 09 TENDER COCONUT -->
+                    <div class="kulfi-card reveal reveal-delay-1">
+                        <div class="kulfi-photo">
+                            <img src="Malai.png" alt="Tender Coconut Kulfi">
+                            <span class="kulfi-tag">COASTAL SPECIAL</span>
+                        </div>
+                        <div class="kulfi-details">
+                            <span class="kulfi-no">09</span>
+                            <h3>Tender Coconut – Large</h3>
+                            <p>Fresh tender coconut malai bits giving a refreshing tropical bite.</p>
+                            <div class="kulfi-footer">
+                                <span class="kulfi-badge-format">Stick Kulfi</span>
+                                <a href="product.html?product=tenderCoconut" class="details-btn">
+                                    VIEW DETAILS <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10 MALAI (CONFIRMED PRICE: 60) -->
+                    <div class="kulfi-card reveal reveal-delay-2">
+                        <div class="kulfi-photo">
+                            <img src="Malai.png" alt="Malai Kulfi">
+                            <span class="kulfi-tag">BEST SELLER</span>
+                        </div>
+                        <div class="kulfi-details">
+                            <span class="kulfi-no">10</span>
+                            <h3>Malai Kulfi – Large</h3>
+                            <p>Rich, creamy and traditionally made with pure simmered milk.</p>
+                            <div class="kulfi-footer">
+                                <strong>₹60</strong>
+                                <a href="product.html?product=malai" class="details-btn">
+                                    VIEW DETAILS <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 11 KESAR KHAJOOR -->
+                    <div class="kulfi-card reveal reveal-delay-3">
+                        <div class="kulfi-photo">
+                            <img src="Kesar.png" alt="Kesar Khajoor Kulfi">
+                            <span class="kulfi-tag">ROYAL BLEND</span>
+                        </div>
+                        <div class="kulfi-details">
+                            <span class="kulfi-no">11</span>
+                            <h3>Kesar Khajoor – Large</h3>
+                            <p>Natural Arabian dates paired with fragrant saffron strands.</p>
+                            <div class="kulfi-footer">
+                                <span class="kulfi-badge-format">Stick Kulfi</span>
+                                <a href="product.html?product=kesarKhajoor" class="details-btn">
+                                    VIEW DETAILS <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 12 SHAHI GULAB / GULKAND -->
+                    <div class="kulfi-card reveal reveal-delay-4">
+                        <div class="kulfi-photo">
+                            <img src="Hero section.png" alt="Shahi Gulab Kulfi">
+                            <span class="kulfi-tag">FLORAL ESSENCE</span>
+                        </div>
+                        <div class="kulfi-details">
+                            <span class="kulfi-no">12</span>
+                            <h3>Shahi Gulab / Gulkand – Large</h3>
+                            <p>Sun-cooked Damascus rose petal preserve (gulkand) and floral essence.</p>
+                            <div class="kulfi-footer">
+                                <span class="kulfi-badge-format">Stick Kulfi</span>
+                                <a href="product.html?product=shahiGulab" class="details-btn">
+                                    VIEW DETAILS <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 13 PANEER ROSE PETALS -->
+                    <div class="kulfi-card reveal reveal-delay-1">
+                        <div class="kulfi-photo">
+                            <img src="Malai.png" alt="Paneer Rose Petals Kulfi">
+                            <span class="kulfi-tag">SIGNATURE</span>
+                        </div>
+                        <div class="kulfi-details">
+                            <span class="kulfi-no">13</span>
+                            <h3>Paneer Rose Petals – Large</h3>
+                            <p>Soft cottage cheese crumbles infused with edible rose petals.</p>
+                            <div class="kulfi-footer">
+                                <span class="kulfi-badge-format">Stick Kulfi</span>
+                                <a href="product.html?product=paneerRose" class="details-btn">
+                                    VIEW DETAILS <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 14 BLACK CURRANT -->
+                    <div class="kulfi-card reveal reveal-delay-2">
+                        <div class="kulfi-photo">
+                            <img src="Hero section.png" alt="Black Currant Kulfi">
+                            <span class="kulfi-tag">EXOTIC BERRY</span>
+                        </div>
+                        <div class="kulfi-details">
+                            <span class="kulfi-no">14</span>
+                            <h3>Black Currant – Large</h3>
+                            <p>Tangy-sweet wild black currants blended into rich traditional kulfi.</p>
+                            <div class="kulfi-footer">
+                                <span class="kulfi-badge-format">Stick Kulfi</span>
+                                <a href="product.html?product=blackCurrant" class="details-btn">
+                                    VIEW DETAILS <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 15 CHOCOLATE -->
+                    <div class="kulfi-card reveal reveal-delay-3">
+                        <div class="kulfi-photo">
+                            <img src="Pista padam.png" alt="Chocolate Kulfi">
+                            <span class="kulfi-tag">INDULGENT COCOA</span>
+                        </div>
+                        <div class="kulfi-details">
+                            <span class="kulfi-no">15</span>
+                            <h3>Chocolate Kulfi – Large</h3>
+                            <p>Premium rich cocoa meets dense, slow-cooked Indian kulfi cream.</p>
+                            <div class="kulfi-footer">
+                                <span class="kulfi-badge-format">Stick Kulfi</span>
+                                <a href="product.html?product=chocolate" class="details-btn">
+                                    VIEW DETAILS <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 16 PISTA BADAM (CONFIRMED PRICE: 70) -->
+                    <div class="kulfi-card reveal reveal-delay-4">
+                        <div class="kulfi-photo">
+                            <img src="Pista padam.png" alt="Pista Badam Kulfi">
+                            <span class="kulfi-tag">NUT ENRICHED</span>
+                        </div>
+                        <div class="kulfi-details">
+                            <span class="kulfi-no">16</span>
+                            <h3>Pista Badam – Large</h3>
+                            <p>Creamy kulfi enriched with pistachios and premium almonds.</p>
+                            <div class="kulfi-footer">
+                                <strong>₹70</strong>
+                                <a href="product.html?product=pistaBadam" class="details-btn">
+                                    VIEW DETAILS <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 17 ROYAL KESAR PISTA (CONFIRMED PRICE: 70) -->
+                    <div class="kulfi-card reveal reveal-delay-1">
+                        <div class="kulfi-photo">
+                            <img src="Kesar pista .png" alt="Royal Kesar Pista Kulfi">
+                            <span class="kulfi-tag">PREMIUM SAFFRON</span>
+                        </div>
+                        <div class="kulfi-details">
+                            <span class="kulfi-no">17</span>
+                            <h3>Royal Kesar Pista – Large</h3>
+                            <p>Aromatic saffron and crunchy pistachios with smooth kulfi base.</p>
+                            <div class="kulfi-footer">
+                                <strong>₹70</strong>
+                                <a href="product.html?product=kesarPista" class="details-btn">
+                                    VIEW DETAILS <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 18 KESAR BADAM (CONFIRMED PRICE: 70) -->
+                    <div class="kulfi-card reveal reveal-delay-2">
+                        <div class="kulfi-photo">
+                            <img src="Kesar.png" alt="Kesar Badam Kulfi">
+                            <span class="kulfi-tag">POPULAR</span>
+                        </div>
+                        <div class="kulfi-details">
+                            <span class="kulfi-no">18</span>
+                            <h3>Kesar Badam – Large</h3>
+                            <p>Fragrant saffron blended with premium crunchy almonds.</p>
+                            <div class="kulfi-footer">
+                                <strong>₹70</strong>
+                                <a href="product.html?product=kesarBadam" class="details-btn">
+                                    VIEW DETAILS <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 19 PINKY GUAVA -->
+                    <div class="kulfi-card reveal reveal-delay-3">
+                        <div class="kulfi-photo">
+                            <img src="Hero section.png" alt="Pinky Guava Kulfi">
+                            <span class="kulfi-tag">TROPICAL PUNCH</span>
+                        </div>
+                        <div class="kulfi-details">
+                            <span class="kulfi-no">19</span>
+                            <h3>Pinky Guava Kulfi</h3>
+                            <p>Ripe pink guava pulp with a hint of mild masala saltiness.</p>
+                            <div class="kulfi-footer">
+                                <span class="kulfi-badge-format">Stick Kulfi</span>
+                                <a href="product.html?product=pinkyGuava" class="details-btn">
+                                    VIEW DETAILS <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 TAB 2: POT KULFI PANEL
+            ================================================== -->
+
+            <div id="panel-pot" class="format-panel">
+
+                <div class="top-selling-title reveal">
+                    <span></span>
+                    <h3>Pot Kulfi Collection</h3>
+                    <span></span>
+                </div>
+
+                <div class="format-showcase-container reveal">
+
+                    <!-- CONFIRMED POT KULFI PRODUCT CARD -->
+                    <div class="kulfi-card">
+                        <div class="kulfi-photo">
+                            <img src="Hero section.png" alt="Pot Kulfi">
+                            <span class="kulfi-tag">CLAY MATKA</span>
+                        </div>
+                        <div class="kulfi-details">
+                            <span class="kulfi-no">01</span>
+                            <h3>Pot Kulfi</h3>
+                            <p>Traditional slow-cooked kulfi served in an earthen clay pot (matka) for rustic aroma.</p>
+                            <div class="kulfi-footer">
+                                <strong>₹70</strong>
+                                <a href="product.html?product=potKulfi" class="details-btn">
+                                    VIEW DETAILS <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SHOWCASE INFO CARD -->
+                    <div class="format-editorial-card">
+                        <span class="editorial-badge">EARTHEN MATKA DELICACY</span>
+                        <h3>Explore our Pot Kulfi collection</h3>
+                        <p>
+                            Our Pot Kulfis are slow-cooked to dense perfection and chilled inside porous terracotta pots.
+                            The natural clay infuses a rustic earthy aroma that elevates the sweetness and keeps the dessert delightfully cool.
+                        </p>
+                        <div class="editorial-features">
+                            <div>🏺 Traditional Earthen Pots</div>
+                            <div>🌿 Infused with Saffron & Nuts</div>
+                            <div>❄️ Natural Cool Retention</div>
+                        </div>
+                        <a href="#contact" class="editorial-enquiry-btn">ENQUIRE FOR POT KULFI</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 TAB 3: SLICE KULFI PANEL
+            ================================================== -->
+
+            <div id="panel-slice" class="format-panel">
+
+                <div class="top-selling-title reveal">
+                    <span></span>
+                    <h3>Slice Kulfi Collection</h3>
+                    <span></span>
+                </div>
+
+                <div class="format-showcase-container reveal">
+
+                    <div class="format-editorial-card format-editorial-wide">
+                        <span class="editorial-badge">TRADITIONAL ROUND CUT</span>
+                        <h3>Explore our Slice Kulfi collection</h3>
+                        <p>
+                            Crafted in traditional cylindrical moulds, our Slice Kulfis are served by slicing the chilled log into thick, velvety round discs, garnished generously with slivered pistachios, almonds, and rose syrup. Perfect for catering, dinner parties, and special dessert platters.
+                        </p>
+                        <div class="editorial-features">
+                            <div>🍰 Traditional Roll-Cut Slices</div>
+                            <div>✨ Classic Malai, Pista & Dry Fruit Flavours</div>
+                            <div>🎉 Ideal for Events & Dining Platters</div>
+                        </div>
+                        <a href="#contact" class="editorial-enquiry-btn">ENQUIRE FOR SLICE KULFI</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 TAB 4: TUB KULFI PANEL
+            ================================================== -->
+
+            <div id="panel-tub" class="format-panel">
+
+                <div class="top-selling-title reveal">
+                    <span></span>
+                    <h3>Tub Kulfi Collection</h3>
+                    <span></span>
+                </div>
+
+                <div class="format-showcase-container reveal">
+
+                    <div class="format-editorial-card format-editorial-wide">
+                        <span class="editorial-badge">FAMILY & PARTY PACKS</span>
+                        <h3>Explore our Tub Kulfi collection</h3>
+                        <p>
+                            Enjoy Kulfi Corner together with family and friends. Our Tub Kulfi format brings the same dense, slow-cooked authentic taste in generous 500ml and 1000ml tubs designed for easy scooping, family celebrations, and festive dessert tables.
+                        </p>
+                        <div class="editorial-features">
+                            <div>🍨 500ml & 1000ml Party Tubs</div>
+                            <div>🏠 Perfect for Home Freezers & Gatherings</div>
+                            <div>📦 Pre-order for Weddings & Banquets</div>
+                        </div>
+                        <a href="#contact" class="editorial-enquiry-btn">ENQUIRE FOR TUB KULFI</a>
+                    </div>
+
+                </div>
+
             </div>
 
         </section>
@@ -1107,7 +1583,7 @@
                     >
                     <p class="footer-tagline">
                         Authentic Indian Kulfi crafted with pure milk,
-                        natural ingredients and traditional recipes.
+                        natural ingredients and traditional recipes across 4 classic formats.
                     </p>
                     <p class="footer-badge-text">
                         MADE FRESH DAILY
@@ -1127,14 +1603,14 @@
                     </ul>
                 </div>
 
-                <!-- COL 3: LOCATIONS -->
+                <!-- COL 3: FORMATS & LOCATIONS -->
                 <div class="footer-col">
-                    <h4>Locations</h4>
+                    <h4>Kulfi Formats</h4>
                     <ul class="footer-links">
-                        <li><a href="#store">Thanjavur</a></li>
-                        <li><a href="#store">Kumbakonam</a></li>
-                        <li><a href="#store">Coimbatore</a></li>
-                        <li><a href="#store">Ooty</a></li>
+                        <li><a href="#our-kulfis" onclick="switchKulfiTab('stick')">Stick Kulfi (19 Flavours)</a></li>
+                        <li><a href="#our-kulfis" onclick="switchKulfiTab('pot')">Pot Kulfi (Matka)</a></li>
+                        <li><a href="#our-kulfis" onclick="switchKulfiTab('slice')">Slice Kulfi (Roll Cut)</a></li>
+                        <li><a href="#our-kulfis" onclick="switchKulfiTab('tub')">Tub Kulfi (Family Packs)</a></li>
                     </ul>
                 </div>
 
@@ -1176,7 +1652,7 @@
     <!-- Leaflet JS for Map -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN2/WQ=" crossorigin=""></script>
 
-    <!-- Main Navigation & Scroll Script -->
+    <!-- Main Navigation, Tabs & Scroll Script -->
     <script src="./script.js"></script>
 
 </body>

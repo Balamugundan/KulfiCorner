@@ -5190,3 +5190,315 @@ section,
     }
 }
 
+
+
+/* ==========================================================================
+   4 KULFI FORMATS & CATEGORY TABS SYSTEM
+   ========================================================================== */
+
+/* 4 FORMAT HIGHLIGHT CARDS */
+.format-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    max-width: 1300px;
+    margin: 0 auto 45px;
+}
+
+.format-card {
+    background: #FFFFFF;
+    border: 1.5px solid rgba(217, 79, 0, 0.15);
+    border-radius: 18px;
+    padding: 28px 24px 24px;
+    box-shadow: 0 8px 24px rgba(100, 45, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position: relative;
+}
+
+.format-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(100, 45, 0, 0.14);
+    border-color: rgba(217, 79, 0, 0.4);
+}
+
+.format-card-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.format-icon {
+    font-size: 32px;
+    line-height: 1;
+}
+
+.format-count-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #FFF2C2;
+    border: 1px solid #F4A900;
+    border-radius: 15px;
+    color: #9C3E00;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+.format-card h3 {
+    margin: 0 0 10px;
+    color: #4A250E;
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.format-card p {
+    margin: 0 0 20px;
+    color: #70401F;
+    font-size: 12px;
+    line-height: 1.65;
+    flex: 1;
+}
+
+.format-select-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 14px;
+    background: transparent;
+    border: 1.5px solid #D94F00;
+    border-radius: 6px;
+    color: #C74600;
+    font-family: "Poppins", sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.format-select-btn:hover,
+.format-select-btn.active-btn {
+    background: #D94F00;
+    color: #FFFFFF;
+}
+
+
+/* CATEGORY TABS */
+.category-tabs-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 45px;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.category-tabs {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #FFF2C2;
+    padding: 7px;
+    border-radius: 40px;
+    border: 1.5px solid rgba(217, 79, 0, 0.18);
+    box-shadow: 0 6px 20px rgba(100, 45, 0, 0.08);
+}
+
+.tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 11px 24px;
+    border: none;
+    border-radius: 30px;
+    background: transparent;
+    color: #61341E;
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.tab-btn:hover {
+    color: #D94F00;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.tab-btn.active {
+    background: #D94F00;
+    color: #FFFFFF;
+    box-shadow: 0 6px 16px rgba(217, 79, 0, 0.35);
+}
+
+.tab-count {
+    font-size: 10px;
+    opacity: 0.85;
+}
+
+
+/* FORMAT PANELS */
+.format-panel {
+    display: none;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.format-panel.active-panel {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* FORMAT SHOWCASE / EDITORIAL CONTAINERS (POT, SLICE, TUB) */
+.format-showcase-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.format-showcase-container .format-editorial-wide {
+    grid-column: 1 / -1;
+}
+
+.format-editorial-card {
+    background: #FFFFFF;
+    border: 1.5px solid rgba(217, 79, 0, 0.15);
+    border-radius: 20px;
+    padding: 42px 40px;
+    box-shadow: 0 10px 32px rgba(100, 45, 0, 0.08);
+}
+
+.editorial-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: #FFF2C2;
+    border: 1px solid #F4A900;
+    border-radius: 20px;
+    color: #9C3E00;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+}
+
+.format-editorial-card h3 {
+    margin: 0 0 16px;
+    color: #4A250E;
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.format-editorial-card p {
+    color: #6B3B1A;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.editorial-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 25px;
+    margin-bottom: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #F0D995;
+}
+
+.editorial-features div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #4A250E;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.editorial-enquiry-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 28px;
+    min-height: 48px;
+    background: #D94F00;
+    color: #FFFFFF;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.editorial-enquiry-btn:hover {
+    background: #A93B00;
+    transform: translateY(-2px);
+}
+
+.kulfi-badge-format {
+    display: inline-block;
+    padding: 3px 10px;
+    background: #FFF6D6;
+    border-radius: 12px;
+    color: #9C3E00;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+
+/* RESPONSIVE FORMATS */
+@media (min-width: 701px) and (max-width: 1000px) {
+    .format-showcase-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+    .format-showcase-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .format-showcase-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .format-card {
+        padding: 22px 18px;
+    }
+    .category-tabs {
+        padding: 5px;
+        gap: 6px;
+    }
+    .tab-btn {
+        padding: 9px 16px;
+        font-size: 10px;
+    }
+    .format-showcase-container {
+        grid-template-columns: 1fr;
+    }
+    .format-editorial-card {
+        padding: 28px 20px;
+    }
+    .format-editorial-card h3 {
+        font-size: 24px;
+    }
+}
+
