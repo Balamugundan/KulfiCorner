@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Locations | Kulfi Corner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <img src="KULF CORNER.png" alt="Kulfi Corner Logo" class="logo-image">
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">HOME</a>
+                <a href="index.html#our-kulfis" class="nav-link">OUR KULFIS</a>
+                <a href="our-story.html" class="nav-link">OUR STORY</a>
+                <a href="how-we-make.html" class="nav-link">HOW WE MAKE</a>
+                <a href="store.html" class="nav-link active">STORE</a>
+                <a href="contact.html" class="nav-link">CONTACT</a>
+            </nav>
+            <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- STORE HERO -->
+    <section class="store-hero">
+        <div class="store-hero-inner">
+            <p class="store-hero-badge">KULFI CORNER</p>
+            <h1 class="store-hero-title">Our Stores</h1>
+            <p class="store-hero-subtitle">
+                Find Kulfi Corner Near You
+            </p>
+            <p class="store-hero-text">
+                We are present across Tamil Nadu — bringing authentic kulfi
+                closer to you. Visit us and experience the real taste of tradition.
+            </p>
+        </div>
+    </section>
+
+    <!-- MAP + LOCATIONS -->
+    <section class="store-section">
+        <div class="store-section-inner">
+
+            <!-- MAP -->
+            <div class="store-map-wrap">
+                <div id="kulfiMap" class="kulfi-map"></div>
+            </div>
+
+            <!-- LOCATION CARDS -->
+            <div class="store-locations-wrap">
+
+                <div class="store-locations-header">
+                    <span class="store-loc-line"></span>
+                    <span class="store-loc-label">OUR LOCATIONS</span>
+                    <span class="store-loc-line"></span>
+                </div>
+
+                <div class="location-cards-grid">
+
+                    <!-- THANJAVUR -->
+                    <div class="location-card" data-lat="10.7870" data-lng="79.1378">
+                        <div class="location-card-top">
+                            <div class="location-pin-icon">📍</div>
+                            <div class="location-card-info">
+                                <h3>Thanjavur</h3>
+                                <p class="location-address">Tamil Nadu, India</p>
+                                <p class="location-status"><span class="status-dot"></span> Open Now</p>
+                            </div>
+                        </div>
+                        <a
+                            href="https://maps.google.com/?q=Thanjavur,Tamil+Nadu"
+                            target="_blank"
+                            rel="noopener"
+                            class="location-btn"
+                        >
+                            VIEW LOCATION <span>→</span>
+                        </a>
+                    </div>
+
+                    <!-- KUMBAKONAM -->
+                    <div class="location-card" data-lat="10.9602" data-lng="79.3845">
+                        <div class="location-card-top">
+                            <div class="location-pin-icon">📍</div>
+                            <div class="location-card-info">
+                                <h3>Kumbakonam</h3>
+                                <p class="location-address">Tamil Nadu, India</p>
+                                <p class="location-status"><span class="status-dot"></span> Open Now</p>
+                            </div>
+                        </div>
+                        <a
+                            href="https://maps.google.com/?q=Kumbakonam,Tamil+Nadu"
+                            target="_blank"
+                            rel="noopener"
+                            class="location-btn"
+                        >
+                            VIEW LOCATION <span>→</span>
+                        </a>
+                    </div>
+
+                    <!-- COIMBATORE -->
+                    <div class="location-card" data-lat="11.0168" data-lng="76.9558">
+                        <div class="location-card-top">
+                            <div class="location-pin-icon">📍</div>
+                            <div class="location-card-info">
+                                <h3>Coimbatore</h3>
+                                <p class="location-address">Tamil Nadu, India</p>
+                                <p class="location-status"><span class="status-dot"></span> Open Now</p>
+                            </div>
+                        </div>
+                        <a
+                            href="https://maps.google.com/?q=Coimbatore,Tamil+Nadu"
+                            target="_blank"
+                            rel="noopener"
+                            class="location-btn"
+                        >
+                            VIEW LOCATION <span>→</span>
+                        </a>
+                    </div>
+
+                    <!-- OOTY -->
+                    <div class="location-card" data-lat="11.4102" data-lng="76.6950">
+                        <div class="location-card-top">
+                            <div class="location-pin-icon">📍</div>
+                            <div class="location-card-info">
+                                <h3>Ooty</h3>
+                                <p class="location-address">Tamil Nadu, India</p>
+                                <p class="location-status"><span class="status-dot"></span> Open Now</p>
+                            </div>
+                        </div>
+                        <a
+                            href="https://maps.google.com/?q=Ooty,Tamil+Nadu"
+                            target="_blank"
+                            rel="noopener"
+                            class="location-btn"
+                        >
+                            VIEW LOCATION <span>→</span>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- COMING SOON BANNER -->
+    <section class="store-coming-soon">
+        <div class="store-coming-inner">
+            <p class="coming-label">EXPANDING SOON</p>
+            <h2 class="coming-heading">More Kulfi Corner Locations Coming Near You</h2>
+            <p class="coming-text">
+                We are growing across Tamil Nadu to bring authentic kulfi closer to everyone.
+                Stay tuned for new store announcements.
+            </p>
+            <a href="contact.html" class="coming-btn">CONTACT US FOR UPDATES</a>
+        </div>
+    </section>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN2/WQ=" crossorigin=""></script>
+
+    <script>
+    // =========================================================
+    //   KULFI CORNER STORE MAP
+    //   Add new locations to the 'locations' array below
+    // =========================================================
+
+    const locations = [
+        {
+            name: "Kulfi Corner — Thanjavur",
+            city: "Thanjavur",
+            lat: 10.7870,
+            lng: 79.1378
+        },
+        {
+            name: "Kulfi Corner — Kumbakonam",
+            city: "Kumbakonam",
+            lat: 10.9602,
+            lng: 79.3845
+        },
+        {
+            name: "Kulfi Corner — Coimbatore",
+            city: "Coimbatore",
+            lat: 11.0168,
+            lng: 76.9558
+        },
+        {
+            name: "Kulfi Corner — Ooty",
+            city: "Ooty",
+            lat: 11.4102,
+            lng: 76.6950
+        }
+    ];
+
+
+    // Initialise map
+    const map = L.map("kulfiMap", {
+        center: [10.8, 78.2],
+        zoom: 7,
+        scrollWheelZoom: false
+    });
+
+
+    // Tile layer — OpenStreetMap
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 18
+    }).addTo(map);
+
+
+    // Custom marker icon
+    const kulfiIcon = L.divIcon({
+        className: "kulfi-map-marker",
+        html: '<div class="marker-pin"><span>🍦</span></div>',
+        iconSize: [40, 48],
+        iconAnchor: [20, 48],
+        popupAnchor: [0, -50]
+    });
+
+
+    // Add markers
+    locations.forEach(function(loc) {
+        L.marker([loc.lat, loc.lng], { icon: kulfiIcon })
+            .addTo(map)
+            .bindPopup(
+                '<div class="map-popup"><strong>' + loc.name + '</strong><br>' +
+                '<span>' + loc.city + ', Tamil Nadu</span>' +
+                '<br><a href="https://maps.google.com/?q=' + loc.city + ',Tamil+Nadu" target="_blank" rel="noopener">Open in Google Maps</a></div>',
+                { maxWidth: 220 }
+            );
+    });
+
+
+    // Card click — pan to location
+    const cards = document.querySelectorAll(".location-card");
+    cards.forEach(function(card) {
+        card.addEventListener("click", function() {
+            const lat = parseFloat(card.dataset.lat);
+            const lng = parseFloat(card.dataset.lng);
+            map.setView([lat, lng], 13, { animate: true });
+            window.scrollTo({ top: document.querySelector(".store-map-wrap").offsetTop - 100, behavior: "smooth" });
+        });
+    });
+
+
+    // Mobile menu
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener("click", function() {
+            navMenu.classList.toggle("show");
+        });
+        document.querySelectorAll(".nav-link").forEach(function(link) {
+            link.addEventListener("click", function() {
+                navMenu.classList.remove("show");
+            });
+        });
+    }
+    </script>
+
+</body>
+</html>

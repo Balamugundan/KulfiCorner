@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Kulfi Corner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <img src="KULF CORNER.png" alt="Kulfi Corner Logo" class="logo-image">
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">HOME</a>
+                <a href="index.html#our-kulfis" class="nav-link">OUR KULFIS</a>
+                <a href="our-story.html" class="nav-link">OUR STORY</a>
+                <a href="how-we-make.html" class="nav-link">HOW WE MAKE</a>
+                <a href="store.html" class="nav-link">STORE</a>
+                <a href="contact.html" class="nav-link active">CONTACT</a>
+            </nav>
+            <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- CONTACT HERO -->
+    <section class="contact-hero">
+        <div class="contact-hero-inner">
+            <p class="contact-hero-badge">GET IN TOUCH</p>
+            <h1 class="contact-hero-title">
+                Let's Talk<br><span>Kulfi.</span>
+            </h1>
+            <p class="contact-hero-text">
+                Have a question, a bulk order or just want to know more?
+                We'd love to hear from you.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT MAIN -->
+    <section class="contact-main-section">
+        <div class="contact-main-inner">
+
+            <!-- LEFT — INFO -->
+            <div class="contact-info-col">
+
+                <div class="contact-info-header">
+                    <p class="contact-info-label">CONTACT DETAILS</p>
+                    <h2 class="contact-info-heading">We're Always Here<br>for Kulfi Lovers</h2>
+                </div>
+
+                <div class="contact-info-items">
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">📞</div>
+                        <div class="contact-info-text">
+                            <span class="info-type">Phone</span>
+                            <a href="tel:+919999999999" class="info-value">+91 99999 99999</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">✉️</div>
+                        <div class="contact-info-text">
+                            <span class="info-type">Email</span>
+                            <a href="mailto:hello@kulfficorner.in" class="info-value">hello@kulfficorner.in</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">📍</div>
+                        <div class="contact-info-text">
+                            <span class="info-type">Locations</span>
+                            <span class="info-value">Thanjavur · Kumbakonam · Coimbatore · Ooty</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">🕐</div>
+                        <div class="contact-info-text">
+                            <span class="info-type">Store Hours</span>
+                            <span class="info-value">Daily: 11:00 AM – 10:00 PM</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- WHATSAPP BUTTON -->
+                <a
+                    href="https://wa.me/919999999999?text=Hi%20Kulfi%20Corner!%20I%20have%20an%20enquiry."
+                    target="_blank"
+                    rel="noopener"
+                    class="whatsapp-btn"
+                >
+                    <span class="whatsapp-icon">💬</span>
+                    WHATSAPP US
+                </a>
+
+                <p class="whatsapp-note">
+                    Tap to chat with us directly on WhatsApp
+                </p>
+
+            </div>
+
+            <!-- RIGHT — FORM -->
+            <div class="contact-form-col">
+
+                <div class="contact-form-card">
+
+                    <p class="form-card-label">SEND US A MESSAGE</p>
+                    <h2 class="form-card-heading">Send Enquiry</h2>
+
+                    <form class="contact-form" id="contactForm" novalidate>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">Your Name</label>
+                                <input
+                                    type="text"
+                                    id="contactName"
+                                    name="name"
+                                    placeholder="Enter your name"
+                                    required
+                                >
+                            </div>
+                            <div class="form-group">
+                                <label for="contactPhone">Phone Number</label>
+                                <input
+                                    type="tel"
+                                    id="contactPhone"
+                                    name="phone"
+                                    placeholder="Enter your phone number"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address</label>
+                            <input
+                                type="email"
+                                id="contactEmail"
+                                name="email"
+                                placeholder="Enter your email address"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactMessage">Your Message</label>
+                            <textarea
+                                id="contactMessage"
+                                name="message"
+                                rows="5"
+                                placeholder="Write your message or enquiry here..."
+                                required
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit-btn">
+                            SEND ENQUIRY
+                            <span>→</span>
+                        </button>
+
+                        <p class="form-success-msg" id="formSuccess">
+                            ✓ Thank you! We'll get back to you soon.
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =====================================
+         CUSTOMER LOVE / FEEDBACK SECTION
+    ====================================== -->
+
+    <section class="reviews-section">
+        <div class="reviews-inner">
+
+            <div class="reviews-header">
+                <p class="reviews-label">WHAT OUR CUSTOMERS SAY</p>
+                <h2 class="reviews-heading">Customer Love</h2>
+                <p class="reviews-intro">
+                    Real words from real kulfi lovers.
+                    Nothing makes us happier than seeing you smile.
+                </p>
+            </div>
+
+            <!-- REVIEW CARDS -->
+            <div class="reviews-grid">
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "The Kesar Badam kulfi is absolutely divine! So creamy, so rich —
+                        it tastes exactly like the kulfi my grandmother used to make.
+                        I am completely in love with Kulfi Corner."
+                    </p>
+                    <div class="review-author">
+                        <div class="review-avatar">P</div>
+                        <div class="review-author-info">
+                            <strong>Priya R.</strong>
+                            <span>Thanjavur</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card review-card-featured">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "We ordered kulfis for a family event and everyone was amazed.
+                        The Paan Masala kulfi was a huge hit! Quality is outstanding
+                        and the freshness really shows. Highly recommend to everyone!"
+                    </p>
+                    <div class="review-author">
+                        <div class="review-avatar">A</div>
+                        <div class="review-author-info">
+                            <strong>Arun M.</strong>
+                            <span>Coimbatore</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">
+                        "Best kulfi I've had in years. The Malai Kulfi is so smooth
+                        and perfectly sweet. I visit Kulfi Corner every weekend.
+                        The flavours are authentic and the quality is consistently excellent."
+                    </p>
+                    <div class="review-author">
+                        <div class="review-avatar">S</div>
+                        <div class="review-author-info">
+                            <strong>Sunita K.</strong>
+                            <span>Ooty</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SHARE YOUR EXPERIENCE -->
+            <div class="share-experience">
+
+                <div class="share-exp-content">
+                    <h3 class="share-exp-heading">Share Your Experience</h3>
+                    <p class="share-exp-text">
+                        Had a kulfi at Kulfi Corner recently? We'd love to hear about it!
+                        Your feedback helps us keep improving.
+                    </p>
+                </div>
+
+                <div class="share-exp-form" id="shareExpForm">
+                    <div class="exp-form-row">
+                        <input
+                            type="text"
+                            placeholder="Your name"
+                            class="exp-input"
+                            id="expName"
+                        >
+                        <div class="exp-stars-pick">
+                            <span class="exp-star" data-val="1">★</span>
+                            <span class="exp-star" data-val="2">★</span>
+                            <span class="exp-star" data-val="3">★</span>
+                            <span class="exp-star" data-val="4">★</span>
+                            <span class="exp-star" data-val="5">★</span>
+                        </div>
+                    </div>
+                    <textarea
+                        placeholder="Tell us about your kulfi experience..."
+                        class="exp-textarea"
+                        id="expMessage"
+                        rows="3"
+                    ></textarea>
+                    <button class="exp-submit-btn" id="expSubmitBtn">
+                        SHARE YOUR REVIEW
+                        <span>→</span>
+                    </button>
+                    <p class="exp-success" id="expSuccess">
+                        ✓ Thank you for sharing your experience! We truly appreciate it.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <script src="./script.js"></script>
+    <script>
+
+    // =========================================================
+    //   CONTACT FORM — Frontend only (no backend)
+    // =========================================================
+
+    const contactForm = document.getElementById("contactForm");
+    const formSuccess = document.getElementById("formSuccess");
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            const name = document.getElementById("contactName").value.trim();
+            const message = document.getElementById("contactMessage").value.trim();
+            if (name && message) {
+                formSuccess.style.display = "block";
+                contactForm.reset();
+                setTimeout(function() {
+                    formSuccess.style.display = "none";
+                }, 5000);
+            }
+        });
+    }
+
+
+    // =========================================================
+    //   STAR RATING PICKER
+    // =========================================================
+
+    const stars = document.querySelectorAll(".exp-star");
+    let selectedRating = 0;
+
+    stars.forEach(function(star) {
+        star.addEventListener("mouseover", function() {
+            const val = parseInt(star.dataset.val);
+            stars.forEach(function(s, i) {
+                s.classList.toggle("star-active", i < val);
+            });
+        });
+        star.addEventListener("mouseout", function() {
+            stars.forEach(function(s, i) {
+                s.classList.toggle("star-active", i < selectedRating);
+            });
+        });
+        star.addEventListener("click", function() {
+            selectedRating = parseInt(star.dataset.val);
+            stars.forEach(function(s, i) {
+                s.classList.toggle("star-active", i < selectedRating);
+            });
+        });
+    });
+
+
+    // =========================================================
+    //   EXPERIENCE FORM SUBMIT — Frontend only
+    // =========================================================
+
+    const expSubmitBtn = document.getElementById("expSubmitBtn");
+    const expSuccess = document.getElementById("expSuccess");
+
+    if (expSubmitBtn) {
+        expSubmitBtn.addEventListener("click", function() {
+            const name = document.getElementById("expName").value.trim();
+            const message = document.getElementById("expMessage").value.trim();
+            if (name && message) {
+                expSuccess.style.display = "block";
+                document.getElementById("expName").value = "";
+                document.getElementById("expMessage").value = "";
+                selectedRating = 0;
+                stars.forEach(function(s) { s.classList.remove("star-active"); });
+                setTimeout(function() {
+                    expSuccess.style.display = "none";
+                }, 5000);
+            }
+        });
+    }
+
+    </script>
+
+</body>
+</html>

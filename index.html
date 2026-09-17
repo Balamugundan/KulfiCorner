@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Basic Settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kulfi Corner — Authentic Indian Kulfi</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Leaflet Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+                NAVBAR
+    ====================================== -->
+
+    <header class="navbar">
+
+        <div class="navbar-container">
+
+            <!-- LOGO -->
+            <a href="#home" class="logo">
+                <img
+                    src="KULF CORNER.png"
+                    alt="Kulfi Corner Logo"
+                    class="logo-image"
+                >
+            </a>
+
+            <!-- DESKTOP NAVIGATION -->
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">HOME</a>
+                <a href="#our-kulfis" class="nav-link">OUR KULFIS</a>
+                <a href="#our-story" class="nav-link">OUR STORY</a>
+                <a href="#how-we-make" class="nav-link">HOW WE MAKE</a>
+                <a href="#store" class="nav-link">STORE</a>
+                <a href="#contact" class="nav-link">CONTACT</a>
+            </nav>
+
+            <!-- MOBILE MENU BUTTON -->
+            <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         1. HERO SECTION (HOME)
+    ====================================================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-container">
+
+            <!-- LEFT CONTENT -->
+            <div class="hero-content">
+
+                <p class="hero-small-title">
+                    AUTHENTIC INDIAN KULFI
+                </p>
+
+                <h1 class="hero-title">
+                    Tradition.
+                    <span>Purity.</span>
+                    Perfection.
+                </h1>
+
+                <h2 class="hero-subtitle">
+                    That's Kulfi Corner.
+                </h2>
+
+                <p class="hero-description">
+                    Made with pure milk, natural ingredients
+                    & authentic Indian recipes.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#our-kulfis" class="hero-btn primary-btn">
+                        EXPLORE KULFIS
+                    </a>
+
+                    <a href="#our-story" class="hero-btn secondary-btn">
+                        OUR STORY
+                        <span>+</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT IMAGE -->
+            <div class="hero-image-area">
+
+                <div class="hero-circle"></div>
+
+                <img
+                    src="Hero section.png"
+                    alt="Traditional Kulfi"
+                    class="hero-image"
+                >
+
+                <div class="fresh-badge">
+                    <span>MADE</span>
+                    FRESH
+                    <small>DAILY</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <main>
+
+        <!-- =====================================================
+             2. OUR KULFIS SECTION
+        ====================================================== -->
+
+        <section class="our-kulfis" id="our-kulfis">
+
+            <div class="kulfis-header reveal">
+
+                <p class="kulfis-label">
+                    AUTHENTIC INDIAN KULFI
+                </p>
+
+                <h2>
+                    Our Kulfis
+                </h2>
+
+                <p class="kulfis-intro">
+                    Traditional recipes, premium ingredients
+                    and unforgettable taste in every bite.
+                </p>
+
+            </div>
+
+
+            <!-- TOP SELLING TITLE -->
+            <div class="top-selling-title reveal">
+                <span></span>
+                <h3>Top Selling Kulfis</h3>
+                <span></span>
+            </div>
+
+
+            <!-- PRODUCTS GRID -->
+            <div class="kulfi-grid">
+
+                <!-- 01 MALAI -->
+                <div class="kulfi-card reveal reveal-delay-1">
+                    <div class="kulfi-photo">
+                        <img src="Malai.png" alt="Malai Kulfi">
+                        <span class="kulfi-tag">BEST SELLER</span>
+                    </div>
+                    <div class="kulfi-details">
+                        <span class="kulfi-no">01</span>
+                        <h3>Malai</h3>
+                        <p>Rich, creamy and traditionally made with pure milk.</p>
+                        <div class="kulfi-footer">
+                            <strong>₹60</strong>
+                            <a href="product.html?product=malai" class="details-btn">
+                                VIEW DETAILS
+                                <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 02 KESAR BADAM -->
+                <div class="kulfi-card reveal reveal-delay-2">
+                    <div class="kulfi-photo">
+                        <img src="Kesar.png" alt="Kesar Badam Kulfi">
+                        <span class="kulfi-tag">POPULAR</span>
+                    </div>
+                    <div class="kulfi-details">
+                        <span class="kulfi-no">02</span>
+                        <h3>Kesar Badam</h3>
+                        <p>Fragrant saffron blended with premium almonds.</p>
+                        <div class="kulfi-footer">
+                            <strong>₹70</strong>
+                            <a href="product.html?product=kesarBadam" class="details-btn">
+                                VIEW DETAILS
+                                <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 03 KESAR PISTA -->
+                <div class="kulfi-card reveal reveal-delay-3">
+                    <div class="kulfi-photo">
+                        <img src="Kesar pista .png" alt="Kesar Pista Kulfi">
+                    </div>
+                    <div class="kulfi-details">
+                        <span class="kulfi-no">03</span>
+                        <h3>Kesar Pista</h3>
+                        <p>A delicious combination of saffron and crunchy almonds.</p>
+                        <div class="kulfi-footer">
+                            <strong>₹70</strong>
+                            <a href="product.html?product=kesarPista" class="details-btn">
+                                VIEW DETAILS
+                                <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 04 PISTA BADAM -->
+                <div class="kulfi-card reveal reveal-delay-4">
+                    <div class="kulfi-photo">
+                        <img src="Pista padam.png" alt="Pista Badam Kulfi">
+                    </div>
+                    <div class="kulfi-details">
+                        <span class="kulfi-no">04</span>
+                        <h3>Pista Badam</h3>
+                        <p>Creamy kulfi filled with pistachios and premium almonds.</p>
+                        <div class="kulfi-footer">
+                            <strong>₹70</strong>
+                            <a href="product.html?product=pistaBadam" class="details-btn">
+                                VIEW DETAILS
+                                <span>→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- VIEW ALL -->
+            <div class="view-all-kulfis reveal">
+                <a href="#our-kulfis" class="view-all-btn">
+                    VIEW ALL KULFIS
+                    <span>→</span>
+                </a>
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             3. OUR STORY SECTION
+        ====================================================== -->
+
+        <div id="our-story" class="section-anchor"></div>
+
+        <section class="page-hero story-hero reveal">
+
+            <div class="page-hero-container">
+
+                <!-- LEFT CONTENT -->
+                <div class="page-hero-content">
+                    <p class="page-hero-badge">
+                        AUTHENTIC INDIAN KULFI
+                    </p>
+                    <h2 class="page-hero-title">
+                        A Taste of<br>
+                        <span>Tradition.</span>
+                    </h2>
+                    <p class="page-hero-text">
+                        Born from a love for India's most beloved frozen dessert,
+                        Kulfi Corner brings authentic kulfi recipes to life —
+                        using pure milk, real ingredients and time-honoured methods
+                        passed down through generations.
+                    </p>
+                    <a href="#how-we-make" class="story-cta-btn">
+                        HOW WE MAKE IT
+                        <span>→</span>
+                    </a>
+                </div>
+
+                <!-- RIGHT IMAGE -->
+                <div class="page-hero-image">
+                    <div class="page-hero-img-frame">
+                        <img
+                            src="Hero section.png"
+                            alt="Traditional Kulfi — Kulfi Corner"
+                        >
+                    </div>
+                    <div class="page-hero-img-accent"></div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STORY NARRATIVE -->
+        <section class="story-section">
+
+            <div class="story-section-inner">
+
+                <div class="story-label-row reveal">
+                    <span class="story-divider-line"></span>
+                    <span class="story-label-text">OUR STORY</span>
+                    <span class="story-divider-line"></span>
+                </div>
+
+                <h2 class="story-main-heading reveal">
+                    Made With Tradition.<br>
+                    <span>Served With Love.</span>
+                </h2>
+
+                <div class="story-content-grid">
+
+                    <!-- LEFT IMAGE -->
+                    <div class="story-img-col reveal">
+                        <div class="story-img-box">
+                            <img src="Malai.png" alt="Kulfi Corner — Authentic Kulfi">
+                        </div>
+                        <div class="story-img-badge">
+                            <span class="story-badge-year-label">Since</span>
+                            2019
+                            <small>KULFI CORNER</small>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT TEXT -->
+                    <div class="story-text-col reveal">
+                        <p class="story-text-para">
+                            Kulfi Corner was born from a simple passion — to bring back the authentic
+                            taste of Indian kulfi that many of us grew up loving. The rich, dense, creamy
+                            kulfi made from slow-cooked full-cream milk. Not the quick-frozen kind. Not
+                            the artificial kind. The real kind.
+                        </p>
+                        <p class="story-text-para">
+                            Every kulfi at Kulfi Corner is prepared using traditional recipes. We use
+                            pure full-cream milk simmered to the right consistency before blending in
+                            authentic Indian flavours — saffron, cardamom, rose, pista, badam and much more.
+                        </p>
+                        <p class="story-text-para">
+                            We never compromise on ingredients. No artificial flavours. No shortcuts.
+                            Every kulfi is made fresh and served at its very best — because that is
+                            the Kulfi Corner promise.
+                        </p>
+                        <div class="story-highlights">
+                            <div class="story-highlight-item">
+                                <span class="highlight-dot"></span>
+                                <span>Pure Full-Cream Milk</span>
+                            </div>
+                            <div class="story-highlight-item">
+                                <span class="highlight-dot"></span>
+                                <span>Natural Ingredients Only</span>
+                            </div>
+                            <div class="story-highlight-item">
+                                <span class="highlight-dot"></span>
+                                <span>Made Fresh Every Day</span>
+                            </div>
+                            <div class="story-highlight-item">
+                                <span class="highlight-dot"></span>
+                                <span>Traditional Recipes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- WHY KULFI CORNER -->
+        <section class="why-section">
+
+            <div class="why-section-inner">
+
+                <div class="why-header reveal">
+                    <p class="why-label">WHAT MAKES US DIFFERENT</p>
+                    <h2 class="why-heading">Why Kulfi Corner?</h2>
+                    <p class="why-intro">
+                        Everything we do starts and ends with one thing — giving you
+                        the most authentic kulfi experience possible.
+                    </p>
+                </div>
+
+                <div class="why-cards-grid">
+
+                    <div class="why-card reveal reveal-delay-1">
+                        <div class="why-card-icon-wrap">
+                            <div class="why-card-icon">🏺</div>
+                        </div>
+                        <h3>Traditional Taste</h3>
+                        <p>Every kulfi is crafted following authentic Indian recipes — the way kulfi was always meant to taste.</p>
+                    </div>
+
+                    <div class="why-card reveal reveal-delay-2">
+                        <div class="why-card-icon-wrap">
+                            <div class="why-card-icon">⭐</div>
+                        </div>
+                        <h3>Premium Ingredients</h3>
+                        <p>Only the finest — pure full-cream milk, real saffron, quality nuts and natural flavours. No artificial additives.</p>
+                    </div>
+
+                    <div class="why-card reveal reveal-delay-3">
+                        <div class="why-card-icon-wrap">
+                            <div class="why-card-icon">🌅</div>
+                        </div>
+                        <h3>Freshly Made</h3>
+                        <p>Every batch is prepared fresh each day so you always get kulfi at its very best — never old, never stale.</p>
+                    </div>
+
+                    <div class="why-card reveal reveal-delay-4">
+                        <div class="why-card-icon-wrap">
+                            <div class="why-card-icon">🍯</div>
+                        </div>
+                        <h3>Authentic Flavours</h3>
+                        <p>From classic Malai to Kesar Badam to Paan Masala — every flavour is rooted in India's rich kulfi heritage.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STORY CTA BANNER -->
+        <section class="story-cta-banner">
+            <div class="story-cta-inner reveal">
+                <p class="cta-banner-label">KULFI CORNER</p>
+                <h2 class="cta-banner-heading">Ready to Taste the Tradition?</h2>
+                <p class="cta-banner-text">
+                    Explore our full range of authentic Indian kulfis — made fresh, made with love.
+                </p>
+                <div class="cta-banner-btns">
+                    <a href="#our-kulfis" class="cta-banner-primary">EXPLORE OUR KULFIS</a>
+                    <a href="#how-we-make" class="cta-banner-secondary">HOW WE MAKE IT <span>→</span></a>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- =====================================================
+             4. HOW WE MAKE SECTION
+        ====================================================== -->
+
+        <div id="how-we-make" class="section-anchor"></div>
+
+        <section class="process-hero reveal">
+            <div class="process-hero-inner">
+                <p class="process-hero-badge">THE KULFI CORNER METHOD</p>
+                <h2 class="process-hero-title">How We Make<br><span>Our Kulfi</span></h2>
+                <p class="process-hero-subtitle">
+                    From pure ingredients to a perfectly creamy kulfi —<br>
+                    every step done with care, every batch made with tradition.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- PROCESS 5-STEP SECTION -->
+        <section class="process-section">
+
+            <div class="process-section-inner">
+
+                <div class="process-intro reveal">
+                    <div class="process-intro-line"></div>
+                    <p class="process-intro-text">A FIVE-STEP PROCESS</p>
+                    <div class="process-intro-line"></div>
+                </div>
+
+                <div class="process-steps">
+
+                    <!-- STEP 01 -->
+                    <div class="process-step reveal">
+                        <div class="step-visual">
+                            <div class="step-number-circle">01</div>
+                            <div class="step-connector"></div>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-icon-wrap">
+                                <span class="step-icon">🌾</span>
+                            </div>
+                            <div class="step-body">
+                                <span class="step-num-label">STEP 01</span>
+                                <h3>Select Quality Ingredients</h3>
+                                <p>
+                                    We begin by handpicking the finest ingredients — full-cream milk,
+                                    premium nuts, real saffron, pure cardamom and natural flavouring
+                                    agents. Only ingredients that meet our quality standard make it
+                                    into our kulfi.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 02 -->
+                    <div class="process-step step-alt reveal">
+                        <div class="step-visual">
+                            <div class="step-number-circle">02</div>
+                            <div class="step-connector"></div>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-icon-wrap">
+                                <span class="step-icon">🥛</span>
+                            </div>
+                            <div class="step-body">
+                                <span class="step-num-label">STEP 02</span>
+                                <h3>Prepare the Milk</h3>
+                                <p>
+                                    Pure full-cream milk is slowly simmered and reduced over low heat
+                                    until it reaches the perfect thick, rich consistency. This slow
+                                    cooking process is the heart of authentic kulfi — giving it that
+                                    dense, creamy texture that sets it apart.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 03 -->
+                    <div class="process-step reveal">
+                        <div class="step-visual">
+                            <div class="step-number-circle">03</div>
+                            <div class="step-connector"></div>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-icon-wrap">
+                                <span class="step-icon">🌸</span>
+                            </div>
+                            <div class="step-body">
+                                <span class="step-num-label">STEP 03</span>
+                                <h3>Blend Authentic Flavours</h3>
+                                <p>
+                                    Once the milk base is ready, we blend in our authentic Indian
+                                    flavours — real saffron strands, hand-ground cardamom, crushed
+                                    pistachios, fresh rose water, gulkand and more. Each flavour is
+                                    carefully balanced to stay true to its traditional roots.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 04 -->
+                    <div class="process-step step-alt reveal">
+                        <div class="step-visual">
+                            <div class="step-number-circle">04</div>
+                            <div class="step-connector"></div>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-icon-wrap">
+                                <span class="step-icon">❄️</span>
+                            </div>
+                            <div class="step-body">
+                                <span class="step-num-label">STEP 04</span>
+                                <h3>Freeze Slowly</h3>
+                                <p>
+                                    The kulfi mixture is carefully poured into moulds and frozen slowly
+                                    — never rushed. Slow freezing allows the kulfi to develop its
+                                    characteristic dense and creamy texture, quite different from the
+                                    lighter, airier ice cream. Good kulfi cannot be hurried.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 05 -->
+                    <div class="process-step process-step-last reveal">
+                        <div class="step-visual">
+                            <div class="step-number-circle step-number-final">05</div>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-icon-wrap">
+                                <span class="step-icon">✨</span>
+                            </div>
+                            <div class="step-body">
+                                <span class="step-num-label">STEP 05</span>
+                                <h3>Serve Fresh</h3>
+                                <p>
+                                    Every Kulfi Corner kulfi is served fresh to you — straight from the
+                                    freezer at just the right moment. We make fresh batches every day
+                                    so you always receive kulfi at its finest. Because great kulfi
+                                    deserves to be enjoyed at its very best.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROMISE BANNER -->
+        <section class="process-promise">
+
+            <div class="process-promise-inner">
+
+                <div class="promise-text-side reveal">
+                    <p class="promise-label">THE KULFI CORNER PROMISE</p>
+                    <h2 class="promise-heading">
+                        No Shortcuts.<br>
+                        <span>No Artificial Flavours.</span><br>
+                        Just Pure Kulfi.
+                    </h2>
+                    <p class="promise-body">
+                        We believe the best kulfi is made the old way —
+                        with patience, pure ingredients and genuine care.
+                        That is why every step of our process stays true
+                        to traditional kulfi-making, so every bite you take
+                        carries the authentic taste of India.
+                    </p>
+                    <a href="#our-kulfis" class="promise-btn">
+                        EXPLORE OUR KULFIS
+                    </a>
+                </div>
+
+                <div class="promise-img-side reveal">
+                    <div class="promise-img-box">
+                        <img src="Kesar.png" alt="Kesar Kulfi — Kulfi Corner">
+                    </div>
+                    <div class="promise-img-box promise-img-box-small">
+                        <img src="Malai.png" alt="Malai Kulfi — Kulfi Corner">
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             5. STORE / LOCATIONS SECTION
+        ====================================================== -->
+
+        <div id="store" class="section-anchor"></div>
+
+        <section class="store-hero reveal">
+            <div class="store-hero-inner">
+                <p class="store-hero-badge">KULFI CORNER</p>
+                <h2 class="store-hero-title">Our Stores</h2>
+                <p class="store-hero-subtitle">
+                    Find Kulfi Corner Near You
+                </p>
+                <p class="store-hero-text">
+                    We are present across Tamil Nadu — bringing authentic kulfi
+                    closer to you. Visit us and experience the real taste of tradition.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- STORE MAP + LOCATIONS -->
+        <section class="store-section">
+
+            <div class="store-section-inner">
+
+                <!-- MAP -->
+                <div class="store-map-wrap reveal">
+                    <div id="kulfiMap" class="kulfi-map"></div>
+                </div>
+
+                <!-- LOCATION CARDS -->
+                <div class="store-locations-wrap">
+
+                    <div class="store-locations-header reveal">
+                        <span class="store-loc-line"></span>
+                        <span class="store-loc-label">OUR LOCATIONS</span>
+                        <span class="store-loc-line"></span>
+                    </div>
+
+                    <div class="location-cards-grid">
+
+                        <!-- THANJAVUR -->
+                        <div class="location-card reveal reveal-delay-1" data-lat="10.7870" data-lng="79.1378">
+                            <div class="location-card-top">
+                                <div class="location-pin-icon">📍</div>
+                                <div class="location-card-info">
+                                    <h3>Thanjavur</h3>
+                                    <p class="location-address">Tamil Nadu, India</p>
+                                    <p class="location-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a
+                                href="https://maps.google.com/?q=Thanjavur,Tamil+Nadu"
+                                target="_blank"
+                                rel="noopener"
+                                class="location-btn"
+                            >
+                                VIEW LOCATION <span>→</span>
+                            </a>
+                        </div>
+
+                        <!-- KUMBAKONAM -->
+                        <div class="location-card reveal reveal-delay-2" data-lat="10.9602" data-lng="79.3845">
+                            <div class="location-card-top">
+                                <div class="location-pin-icon">📍</div>
+                                <div class="location-card-info">
+                                    <h3>Kumbakonam</h3>
+                                    <p class="location-address">Tamil Nadu, India</p>
+                                    <p class="location-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a
+                                href="https://maps.google.com/?q=Kumbakonam,Tamil+Nadu"
+                                target="_blank"
+                                rel="noopener"
+                                class="location-btn"
+                            >
+                                VIEW LOCATION <span>→</span>
+                            </a>
+                        </div>
+
+                        <!-- COIMBATORE -->
+                        <div class="location-card reveal reveal-delay-3" data-lat="11.0168" data-lng="76.9558">
+                            <div class="location-card-top">
+                                <div class="location-pin-icon">📍</div>
+                                <div class="location-card-info">
+                                    <h3>Coimbatore</h3>
+                                    <p class="location-address">Tamil Nadu, India</p>
+                                    <p class="location-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a
+                                href="https://maps.google.com/?q=Coimbatore,Tamil+Nadu"
+                                target="_blank"
+                                rel="noopener"
+                                class="location-btn"
+                            >
+                                VIEW LOCATION <span>→</span>
+                            </a>
+                        </div>
+
+                        <!-- OOTY -->
+                        <div class="location-card reveal reveal-delay-4" data-lat="11.4102" data-lng="76.6950">
+                            <div class="location-card-top">
+                                <div class="location-pin-icon">📍</div>
+                                <div class="location-card-info">
+                                    <h3>Ooty</h3>
+                                    <p class="location-address">Tamil Nadu, India</p>
+                                    <p class="location-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a
+                                href="https://maps.google.com/?q=Ooty,Tamil+Nadu"
+                                target="_blank"
+                                rel="noopener"
+                                class="location-btn"
+                            >
+                                VIEW LOCATION <span>→</span>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STORE COMING SOON BANNER -->
+        <section class="store-coming-soon">
+            <div class="store-coming-inner reveal">
+                <p class="coming-label">EXPANDING SOON</p>
+                <h2 class="coming-heading">More Kulfi Corner Locations Coming Near You</h2>
+                <p class="coming-text">
+                    We are growing across Tamil Nadu to bring authentic kulfi closer to everyone.
+                    Stay tuned for new store announcements.
+                </p>
+                <a href="#contact" class="coming-btn">CONTACT US FOR UPDATES</a>
+            </div>
+        </section>
+
+
+
+        <!-- =====================================================
+             6. CONTACT SECTION
+        ====================================================== -->
+
+        <div id="contact" class="section-anchor"></div>
+
+        <section class="contact-hero reveal">
+            <div class="contact-hero-inner">
+                <p class="contact-hero-badge">GET IN TOUCH</p>
+                <h2 class="contact-hero-title">
+                    Let's Talk<br><span>Kulfi.</span>
+                </h2>
+                <p class="contact-hero-text">
+                    Have a question, a bulk order or just want to know more?
+                    We'd love to hear from you.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- CONTACT MAIN SECTION -->
+        <section class="contact-main-section">
+
+            <div class="contact-main-inner">
+
+                <!-- LEFT INFO -->
+                <div class="contact-info-col reveal">
+
+                    <div class="contact-info-header">
+                        <p class="contact-info-label">CONTACT DETAILS</p>
+                        <h2 class="contact-info-heading">We're Always Here<br>for Kulfi Lovers</h2>
+                    </div>
+
+                    <div class="contact-info-items">
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">📞</div>
+                            <div class="contact-info-text">
+                                <span class="info-type">Phone</span>
+                                <a href="tel:+919999999999" class="info-value">+91 99999 99999</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">✉️</div>
+                            <div class="contact-info-text">
+                                <span class="info-type">Email</span>
+                                <a href="mailto:hello@kulficorner.in" class="info-value">hello@kulficorner.in</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">📍</div>
+                            <div class="contact-info-text">
+                                <span class="info-type">Locations</span>
+                                <span class="info-value">Thanjavur · Kumbakonam · Coimbatore · Ooty</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">🕐</div>
+                            <div class="contact-info-text">
+                                <span class="info-type">Store Hours</span>
+                                <span class="info-value">Daily: 11:00 AM – 10:00 PM</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- WHATSAPP BUTTON -->
+                    <a
+                        href="https://wa.me/919999999999?text=Hi%20Kulfi%20Corner!%20I%20have%20an%20enquiry."
+                        target="_blank"
+                        rel="noopener"
+                        class="whatsapp-btn"
+                    >
+                        <span class="whatsapp-icon">💬</span>
+                        WHATSAPP US
+                    </a>
+
+                    <p class="whatsapp-note">
+                        Tap to chat with us directly on WhatsApp
+                    </p>
+
+                </div>
+
+
+                <!-- RIGHT FORM -->
+                <div class="contact-form-col reveal">
+
+                    <div class="contact-form-card">
+
+                        <p class="form-card-label">SEND US A MESSAGE</p>
+                        <h2 class="form-card-heading">Send Enquiry</h2>
+
+                        <form class="contact-form" id="contactForm" novalidate>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactName">Your Name</label>
+                                    <input
+                                        type="text"
+                                        id="contactName"
+                                        name="name"
+                                        placeholder="Enter your name"
+                                        required
+                                    >
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactPhone">Phone Number</label>
+                                    <input
+                                        type="tel"
+                                        id="contactPhone"
+                                        name="phone"
+                                        placeholder="Enter your phone number"
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactEmail">Email Address</label>
+                                <input
+                                    type="email"
+                                    id="contactEmail"
+                                    name="email"
+                                    placeholder="Enter your email address"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactMessage">Your Message</label>
+                                <textarea
+                                    id="contactMessage"
+                                    name="message"
+                                    rows="5"
+                                    placeholder="Write your message or enquiry here..."
+                                    required
+                                ></textarea>
+                            </div>
+
+                            <button type="submit" class="form-submit-btn">
+                                SEND ENQUIRY
+                                <span>→</span>
+                            </button>
+
+                            <p class="form-success-msg" id="formSuccess">
+                                ✓ Thank you! We'll get back to you soon.
+                            </p>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             7. CUSTOMER FEEDBACK / REVIEWS SECTION
+        ====================================================== -->
+
+        <section class="reviews-section">
+
+            <div class="reviews-inner">
+
+                <div class="reviews-header reveal">
+                    <p class="reviews-label">WHAT OUR CUSTOMERS SAY</p>
+                    <h2 class="reviews-heading">Customer Love</h2>
+                    <p class="reviews-intro">
+                        Real words from real kulfi lovers.
+                        Nothing makes us happier than seeing you smile.
+                    </p>
+                </div>
+
+                <!-- REVIEW CARDS -->
+                <div class="reviews-grid">
+
+                    <div class="review-card reveal reveal-delay-1">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">
+                            "The Kesar Badam kulfi is absolutely divine! So creamy, so rich —
+                            it tastes exactly like the kulfi my grandmother used to make.
+                            I am completely in love with Kulfi Corner."
+                        </p>
+                        <div class="review-author">
+                            <div class="review-avatar">P</div>
+                            <div class="review-author-info">
+                                <strong>Priya R.</strong>
+                                <span>Thanjavur</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-card review-card-featured reveal reveal-delay-2">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">
+                            "We ordered kulfis for a family event and everyone was amazed.
+                            The Paan Masala kulfi was a huge hit! Quality is outstanding
+                            and the freshness really shows. Highly recommend to everyone!"
+                        </p>
+                        <div class="review-author">
+                            <div class="review-avatar">A</div>
+                            <div class="review-author-info">
+                                <strong>Arun M.</strong>
+                                <span>Coimbatore</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-card reveal reveal-delay-3">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">
+                            "Best kulfi I've had in years. The Malai Kulfi is so smooth
+                            and perfectly sweet. I visit Kulfi Corner every weekend.
+                            The flavours are authentic and the quality is consistently excellent."
+                        </p>
+                        <div class="review-author">
+                            <div class="review-avatar">S</div>
+                            <div class="review-author-info">
+                                <strong>Sunita K.</strong>
+                                <span>Ooty</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- SHARE YOUR EXPERIENCE -->
+                <div class="share-experience reveal">
+
+                    <div class="share-exp-content">
+                        <h3 class="share-exp-heading">Share Your Experience</h3>
+                        <p class="share-exp-text">
+                            Had a kulfi at Kulfi Corner recently? We'd love to hear about it!
+                            Your feedback helps us keep improving.
+                        </p>
+                    </div>
+
+                    <div class="share-exp-form" id="shareExpForm">
+                        <div class="exp-form-row">
+                            <input
+                                type="text"
+                                placeholder="Your name"
+                                class="exp-input"
+                                id="expName"
+                            >
+                            <div class="exp-stars-pick">
+                                <span class="exp-star" data-val="1">★</span>
+                                <span class="exp-star" data-val="2">★</span>
+                                <span class="exp-star" data-val="3">★</span>
+                                <span class="exp-star" data-val="4">★</span>
+                                <span class="exp-star" data-val="5">★</span>
+                            </div>
+                        </div>
+                        <textarea
+                            placeholder="Tell us about your kulfi experience..."
+                            class="exp-textarea"
+                            id="expMessage"
+                            rows="3"
+                        ></textarea>
+                        <button class="exp-submit-btn" id="expSubmitBtn">
+                            SHARE YOUR REVIEW
+                            <span>→</span>
+                        </button>
+                        <p class="exp-success" id="expSuccess">
+                            ✓ Thank you for sharing your experience! We truly appreciate it.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================
+                8. FOOTER
+    ====================================== -->
+
+    <footer class="main-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-grid">
+
+                <!-- COL 1: BRAND -->
+                <div class="footer-col footer-brand">
+                    <img
+                        src="KULF CORNER.png"
+                        alt="Kulfi Corner Logo"
+                        class="footer-logo"
+                    >
+                    <p class="footer-tagline">
+                        Authentic Indian Kulfi crafted with pure milk,
+                        natural ingredients and traditional recipes.
+                    </p>
+                    <p class="footer-badge-text">
+                        MADE FRESH DAILY
+                    </p>
+                </div>
+
+                <!-- COL 2: QUICK LINKS -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#our-kulfis">Our Kulfis</a></li>
+                        <li><a href="#our-story">Our Story</a></li>
+                        <li><a href="#how-we-make">How We Make</a></li>
+                        <li><a href="#store">Store Locations</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- COL 3: LOCATIONS -->
+                <div class="footer-col">
+                    <h4>Locations</h4>
+                    <ul class="footer-links">
+                        <li><a href="#store">Thanjavur</a></li>
+                        <li><a href="#store">Kumbakonam</a></li>
+                        <li><a href="#store">Coimbatore</a></li>
+                        <li><a href="#store">Ooty</a></li>
+                    </ul>
+                </div>
+
+                <!-- COL 4: CONTACT -->
+                <div class="footer-col">
+                    <h4>Get In Touch</h4>
+                    <p class="footer-contact-text">
+                        <strong>Phone:</strong> +91 99999 99999<br>
+                        <strong>Email:</strong> hello@kulficorner.in<br>
+                        <strong>Hours:</strong> 11:00 AM – 10:00 PM
+                    </p>
+                    <a
+                        href="https://wa.me/919999999999?text=Hi%20Kulfi%20Corner!"
+                        target="_blank"
+                        rel="noopener"
+                        class="footer-wa-btn"
+                    >
+                        💬 WhatsApp Us
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- FOOTER BOTTOM -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kulfi Corner. All Rights Reserved. Made With Tradition. Served With Love.</p>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================
+                SCRIPTS
+    ====================================== -->
+
+    <!-- Leaflet JS for Map -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN2/WQ=" crossorigin=""></script>
+
+    <!-- Main Navigation & Scroll Script -->
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
