@@ -1,0 +1,1737 @@
+/* ==========================================================================
+   KULFI CORNER — MOBILE RESPONSIVE FIX
+   Purpose-built mobile optimizations layered on top of existing style.css
+   This file ONLY contains mobile/responsive improvements.
+   ========================================================================== */
+
+/* ==========================================================================
+   0. GLOBAL RESPONSIVE FOUNDATIONS
+   ========================================================================== */
+
+/* Ensure all images are responsive by default */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Prevent any horizontal overflow from the html/body level */
+html {
+    overflow-x: hidden;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* ==========================================================================
+   1. MOBILE NAVBAR — PROPER HAMBURGER MENU
+   Breakpoint: max-width 768px
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        height: 68px;
+    }
+
+    .navbar-container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .logo {
+        width: 100px;
+        height: 64px;
+        flex-shrink: 0;
+    }
+
+    .logo-image {
+        width: 100px;
+        height: 60px;
+        object-fit: contain;
+    }
+
+    /* Hamburger button */
+    .menu-toggle {
+        display: flex;
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+        z-index: 10001;
+    }
+
+    .menu-toggle span {
+        width: 22px;
+        height: 2.5px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    /* Mobile slide-out menu */
+    .nav-menu {
+        position: fixed;
+        top: 68px;
+        right: -100%;
+        width: min(280px, 80vw);
+        height: calc(100vh - 68px);
+        height: calc(100dvh - 68px);
+        padding: 32px 24px;
+        background: var(--orange, #D9541E);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 8px;
+        margin: 0;
+        max-width: none;
+        box-shadow: -8px 0 30px rgba(80, 30, 0, 0.25);
+        transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        z-index: 10000;
+    }
+
+    .nav-menu.show {
+        right: 0;
+    }
+
+    /* Nav links for mobile */
+    .nav-link {
+        width: 100%;
+        padding: 14px 0;
+        font-size: 14px;
+        letter-spacing: 1.5px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    /* Mobile menu overlay */
+    .nav-menu.show ~ .menu-overlay {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .navbar {
+        height: 62px;
+    }
+
+    .logo {
+        width: 90px;
+        height: 60px;
+    }
+
+    .logo-image {
+        width: 90px;
+        height: 54px;
+    }
+
+    .nav-menu {
+        top: 62px;
+        height: calc(100vh - 62px);
+        height: calc(100dvh - 62px);
+        width: min(260px, 80vw);
+        padding: 28px 20px;
+    }
+
+    .nav-link {
+        font-size: 13px;
+        padding: 12px 0;
+    }
+}
+
+
+/* ==========================================================================
+   2. HERO SECTION — MOBILE VERTICAL LAYOUT
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    .hero {
+        margin-top: 68px;
+        min-height: auto;
+    }
+
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
+        padding: 0;
+    }
+
+    /* Content stacks first */
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        padding: clamp(40px, 8vw, 55px) clamp(16px, 5vw, 25px) clamp(25px, 5vw, 35px);
+        text-align: center;
+        order: 1;
+    }
+
+    .hero-small-title {
+        margin-bottom: 16px;
+        font-size: clamp(8px, 2.5vw, 10px);
+        letter-spacing: 2px;
+    }
+
+    .hero-title {
+        font-size: clamp(32px, 10vw, 52px);
+        line-height: 1.05;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .hero-subtitle {
+        margin-top: 14px;
+        font-size: clamp(18px, 5.5vw, 26px);
+    }
+
+    .hero-description {
+        max-width: 100%;
+        margin: 0 auto 20px;
+        font-size: clamp(12px, 3.5vw, 14px);
+        line-height: 1.7;
+        padding: 0 4px;
+    }
+
+    /* Buttons stack on narrow screens */
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .hero-btn {
+        min-height: 46px;
+        padding: 0 20px;
+        font-size: clamp(9px, 2.8vw, 11px);
+        min-width: 0;
+        flex: 1 1 auto;
+        max-width: 220px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    /* Hero image area */
+    .hero-image-area {
+        width: 100%;
+        min-height: clamp(280px, 60vw, 420px);
+        order: 2;
+        overflow: hidden;
+    }
+
+    .hero-circle {
+        width: min(320px, 85vw);
+        height: min(320px, 85vw);
+        right: 50%;
+        top: 50%;
+        transform: translate(50%, -50%);
+    }
+
+    .hero-image-area::before {
+        width: min(280px, 75vw);
+        height: min(280px, 75vw);
+        right: 50%;
+        top: 50%;
+        transform: translate(50%, -50%);
+        border-width: 5px;
+    }
+
+    .hero-image {
+        max-width: min(320px, 80vw);
+        max-height: min(320px, 80vw);
+        object-fit: contain;
+    }
+
+    .fresh-badge {
+        width: 68px;
+        height: 68px;
+        right: 10%;
+        bottom: 10%;
+        font-size: 12px;
+    }
+
+    .fresh-badge span {
+        font-size: 7px;
+    }
+
+    .fresh-badge small {
+        font-size: 6px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .hero {
+        margin-top: 62px;
+    }
+
+    .hero-content {
+        padding: 35px 16px 25px;
+    }
+
+    .hero-title {
+        font-size: clamp(28px, 9vw, 42px);
+    }
+
+    .hero-subtitle {
+        font-size: clamp(17px, 5vw, 22px);
+    }
+
+    .hero-description {
+        font-size: 12px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hero-btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 0 16px;
+        font-size: 10px;
+    }
+
+    .hero-image-area {
+        min-height: clamp(250px, 65vw, 350px);
+    }
+
+    .hero-circle {
+        width: min(280px, 80vw);
+        height: min(280px, 80vw);
+    }
+
+    .hero-image-area::before {
+        width: min(240px, 70vw);
+        height: min(240px, 70vw);
+        border-width: 4px;
+    }
+
+    .fresh-badge {
+        width: 60px;
+        height: 60px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .hero-btn {
+        font-size: 9px;
+        min-height: 42px;
+    }
+}
+
+
+/* ==========================================================================
+   3. OUR KULFIS — FORMAT CARDS + CATEGORY TABS + PRODUCT GRID
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    .our-kulfis {
+        padding: clamp(50px, 10vw, 65px) clamp(16px, 4vw, 20px) clamp(60px, 12vw, 75px);
+    }
+
+    .kulfis-header {
+        margin-bottom: 35px;
+    }
+
+    .kulfis-header h2 {
+        font-size: clamp(36px, 10vw, 50px);
+    }
+
+    .kulfis-label {
+        font-size: clamp(7px, 2.5vw, 9px);
+        padding: 7px 14px;
+    }
+
+    .kulfis-intro {
+        font-size: clamp(11px, 3.2vw, 13px);
+        max-width: 100%;
+        padding: 0 4px;
+    }
+
+    /* Format showcase — 2x2 grid on tablets, 1-col on small phones */
+    .format-showcase-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        max-width: 100%;
+    }
+
+    .format-card {
+        padding: 20px 16px 18px;
+    }
+
+    .format-card h3 {
+        font-size: clamp(18px, 5vw, 22px);
+    }
+
+    .format-card p {
+        font-size: 11px;
+        line-height: 1.6;
+        margin-bottom: 14px;
+    }
+
+    .format-icon {
+        font-size: 26px;
+    }
+
+    .format-count-badge {
+        font-size: 8px;
+        padding: 3px 8px;
+    }
+
+    .format-select-btn {
+        padding: 9px 12px;
+        font-size: 8px;
+    }
+
+    /* Category Tabs — horizontal scroll */
+    .category-tabs-container {
+        margin-bottom: 35px;
+        justify-content: flex-start;
+        padding: 0 0 8px 0;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .category-tabs-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .category-tabs {
+        padding: 5px;
+        gap: 6px;
+        flex-wrap: nowrap;
+        min-width: max-content;
+    }
+
+    .tab-btn {
+        padding: 9px 14px;
+        font-size: clamp(8px, 2.5vw, 10px);
+        white-space: nowrap;
+        letter-spacing: 0.5px;
+    }
+
+    .tab-count {
+        font-size: 8px;
+    }
+
+    /* Kulfi grid — single column */
+    .kulfi-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        gap: 20px;
+    }
+
+    .top-selling-title {
+        gap: 10px;
+        margin-bottom: 25px;
+        padding: 0 4px;
+    }
+
+    .top-selling-title h3 {
+        font-size: clamp(16px, 5vw, 22px);
+        text-align: center;
+    }
+
+    .top-selling-title span {
+        width: 30px;
+        display: none;
+    }
+
+    /* Kulfi cards */
+    .kulfi-photo {
+        height: clamp(220px, 50vw, 300px);
+    }
+
+    .kulfi-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .kulfi-details {
+        padding: 18px 16px;
+    }
+
+    .kulfi-details h3 {
+        font-size: clamp(22px, 6vw, 28px);
+        word-break: break-word;
+    }
+
+    .kulfi-details p {
+        font-size: clamp(11px, 3vw, 12px);
+        line-height: 1.6;
+    }
+
+    .kulfi-footer {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .details-btn {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    /* Format showcase container (Pot/Slice/Tub panels) */
+    .format-showcase-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .format-editorial-card {
+        padding: 24px 18px;
+    }
+
+    .format-editorial-card h3 {
+        font-size: clamp(22px, 6vw, 28px);
+    }
+
+    .format-editorial-card p {
+        font-size: 13px;
+    }
+
+    .editorial-features {
+        gap: 12px 18px;
+    }
+
+    .editorial-features div {
+        font-size: 12px;
+    }
+
+    .editorial-enquiry-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .format-showcase-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .our-kulfis {
+        padding: 45px 14px 55px;
+    }
+
+    .kulfis-header h2 {
+        font-size: clamp(32px, 9vw, 42px);
+    }
+
+    .kulfis-intro {
+        font-size: 11px;
+    }
+
+    .kulfi-photo {
+        height: clamp(200px, 55vw, 260px);
+    }
+
+    .kulfi-details {
+        padding: 16px 14px;
+    }
+
+    .kulfi-details h3 {
+        font-size: clamp(20px, 6vw, 24px);
+    }
+
+    .format-card {
+        padding: 18px 14px 16px;
+    }
+
+    .format-card h3 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .kulfis-header h2 {
+        font-size: 30px;
+    }
+
+    .tab-btn {
+        padding: 8px 10px;
+        font-size: 8px;
+    }
+
+    .kulfi-details h3 {
+        font-size: 20px;
+    }
+}
+
+
+/* ==========================================================================
+   4. VIEW ALL BUTTON — RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .view-all-btn {
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+
+/* ==========================================================================
+   5. PRODUCT DETAIL PAGE — MOBILE STACKING
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    .product-page {
+        margin-top: 68px;
+        min-height: auto;
+        padding: clamp(35px, 7vw, 50px) clamp(16px, 4vw, 20px) clamp(50px, 10vw, 70px);
+    }
+
+    .product-detail {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .product-image-section {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .product-image-box {
+        width: 100%;
+        height: clamp(260px, 55vw, 380px);
+        border-width: 4px;
+        border-radius: 16px;
+    }
+
+    .product-image-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .fresh-product-badge {
+        right: 4%;
+        bottom: -8px;
+        width: 65px;
+        height: 65px;
+        font-size: 11px;
+    }
+
+    .product-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+
+    .product-label {
+        font-size: 8px;
+        padding: 7px 14px;
+    }
+
+    .product-number {
+        margin-top: 6px;
+    }
+
+    .product-content h1 {
+        font-size: clamp(30px, 8vw, 48px);
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .product-rating {
+        justify-content: center;
+    }
+
+    .product-description {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: clamp(12px, 3.2vw, 14px);
+        max-width: 100%;
+        padding: 0 4px;
+    }
+
+    .product-price {
+        justify-content: center;
+    }
+
+    .product-info {
+        text-align: left;
+        word-break: break-word;
+    }
+
+    .product-info h4 {
+        font-size: clamp(14px, 4vw, 16px);
+    }
+
+    .product-info p {
+        font-size: clamp(12px, 3.2vw, 14px);
+    }
+
+    .product-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .back-button,
+    .enquiry-button {
+        min-height: 48px;
+        flex: 1 1 auto;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .product-page {
+        margin-top: 62px;
+        padding: 30px 14px 55px;
+    }
+
+    .product-image-box {
+        height: clamp(240px, 60vw, 300px);
+        border-width: 3px;
+    }
+
+    .product-content h1 {
+        font-size: clamp(26px, 8vw, 38px);
+    }
+
+    .product-description {
+        font-size: 12px;
+    }
+
+    .product-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .back-button,
+    .enquiry-button {
+        width: 100%;
+    }
+}
+
+
+/* ==========================================================================
+   6. OUR STORY — MOBILE VERTICAL LAYOUT
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    /* Page hero */
+    .page-hero {
+        margin-top: 68px;
+        padding: clamp(50px, 10vw, 70px) clamp(16px, 4vw, 22px) clamp(55px, 11vw, 75px);
+    }
+
+    .page-hero-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .page-hero-content {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .page-hero-title {
+        font-size: clamp(36px, 10vw, 56px);
+        word-break: break-word;
+    }
+
+    .page-hero-subtitle {
+        font-size: clamp(14px, 3.8vw, 16px);
+    }
+
+    .page-hero-image {
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        overflow: hidden;
+        min-height: clamp(240px, 50vw, 300px);
+    }
+
+    .page-hero-img-frame {
+        width: min(260px, 75vw) !important;
+        height: min(260px, 75vw) !important;
+    }
+
+    .page-hero-img-accent {
+        width: min(290px, 82vw) !important;
+        height: min(290px, 82vw) !important;
+    }
+
+    .page-hero-image img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 16px;
+    }
+
+    /* Story section */
+    .story-section {
+        padding: clamp(50px, 10vw, 70px) clamp(16px, 4vw, 22px);
+    }
+
+    .story-main-heading {
+        font-size: clamp(30px, 8vw, 42px);
+    }
+
+    .story-content-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .story-img-col {
+        width: 100%;
+    }
+
+    .story-img-col img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 16px;
+    }
+
+    .story-text-col {
+        width: 100%;
+    }
+
+    .story-text {
+        font-size: clamp(13px, 3.5vw, 15px);
+    }
+
+    .story-highlights {
+        gap: 16px;
+    }
+
+    /* Why section */
+    .why-section {
+        padding: clamp(50px, 10vw, 70px) clamp(16px, 4vw, 22px);
+    }
+
+    .why-header h2 {
+        font-size: clamp(30px, 8vw, 42px);
+    }
+
+    .why-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        max-width: 100%;
+    }
+
+    .why-card {
+        padding: 24px 18px;
+    }
+
+    /* CTA Banner */
+    .story-cta-banner {
+        padding: clamp(50px, 10vw, 70px) clamp(16px, 4vw, 22px);
+    }
+
+    .cta-banner-heading {
+        font-size: clamp(26px, 7vw, 36px);
+    }
+
+    .cta-banner-btns {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .cta-banner-primary,
+    .cta-banner-secondary {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .page-hero {
+        margin-top: 62px;
+    }
+
+    .page-hero-title {
+        font-size: clamp(30px, 9vw, 40px);
+    }
+
+    .story-main-heading {
+        font-size: clamp(26px, 7.5vw, 34px);
+    }
+
+    .why-header h2 {
+        font-size: clamp(26px, 7.5vw, 34px);
+    }
+}
+
+
+/* ==========================================================================
+   7. HOW WE MAKE — PROCESS STEPS MOBILE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    .process-hero {
+        margin-top: 68px;
+        padding: clamp(50px, 10vw, 65px) clamp(16px, 4vw, 22px) clamp(55px, 11vw, 70px);
+    }
+
+    .process-hero-title {
+        font-size: clamp(34px, 9vw, 50px);
+    }
+
+    .process-hero-subtitle {
+        font-size: clamp(13px, 3.5vw, 15px);
+    }
+
+    .process-section {
+        padding: clamp(50px, 10vw, 65px) clamp(16px, 4vw, 20px) clamp(60px, 12vw, 75px);
+    }
+
+    .process-intro {
+        margin-bottom: 45px;
+    }
+
+    .process-intro-line {
+        flex: 0 0 40px;
+    }
+
+    .process-step {
+        grid-template-columns: 50px 1fr;
+        gap: 0 16px;
+    }
+
+    .step-number-circle {
+        width: 48px;
+        height: 48px;
+        font-size: 12px;
+    }
+
+    .step-content {
+        grid-template-columns: 44px 1fr;
+        gap: 0 12px;
+        padding-bottom: 35px;
+    }
+
+    .step-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+        border-radius: 10px;
+    }
+
+    .step-body h3 {
+        font-size: clamp(18px, 5vw, 24px);
+    }
+
+    .step-body p {
+        font-size: clamp(12px, 3.2vw, 14px);
+        line-height: 1.7;
+    }
+
+    .step-connector {
+        min-height: 60px;
+    }
+
+    /* Promise banner */
+    .process-promise {
+        padding: clamp(50px, 10vw, 65px) clamp(16px, 4vw, 20px) clamp(60px, 12vw, 75px);
+    }
+
+    .process-promise-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .promise-heading {
+        font-size: clamp(28px, 7.5vw, 38px);
+    }
+
+    .promise-body {
+        font-size: clamp(13px, 3.5vw, 15px);
+        max-width: 100%;
+    }
+
+    .promise-btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+
+    .promise-img-box:first-child {
+        height: clamp(180px, 40vw, 240px);
+    }
+
+    .promise-img-box-small,
+    .promise-img-side .promise-img-box:last-child {
+        height: clamp(130px, 30vw, 170px);
+    }
+}
+
+@media (max-width: 420px) {
+
+    .process-hero {
+        margin-top: 62px;
+    }
+
+    .process-hero-title {
+        font-size: clamp(28px, 8vw, 40px);
+    }
+
+    .step-body h3 {
+        font-size: clamp(17px, 4.5vw, 20px);
+    }
+}
+
+
+/* ==========================================================================
+   8. STORE / LOCATIONS — MOBILE RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    .store-hero {
+        margin-top: 68px;
+        padding: clamp(50px, 10vw, 65px) clamp(16px, 4vw, 22px) clamp(55px, 11vw, 70px);
+    }
+
+    .store-hero-title {
+        font-size: clamp(36px, 10vw, 52px);
+    }
+
+    .store-hero-text {
+        font-size: clamp(12px, 3.2vw, 14px);
+        max-width: 100%;
+    }
+
+    .store-section {
+        padding: clamp(40px, 8vw, 55px) clamp(16px, 4vw, 20px) clamp(55px, 11vw, 70px);
+    }
+
+    .store-locations-header {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .store-search-wrap {
+        max-width: 100%;
+    }
+
+    .store-search-input {
+        width: 100%;
+        height: 46px;
+        font-size: 13px;
+    }
+
+    .loc-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .loc-card {
+        padding: 10px 12px;
+        min-height: auto;
+    }
+
+    .loc-card-title {
+        font-size: clamp(13px, 3.5vw, 15px);
+        white-space: normal;
+        overflow: visible;
+        text-overflow: initial;
+    }
+
+    .loc-card-status {
+        font-size: 9.5px;
+    }
+
+    .loc-view-btn {
+        font-size: 8px;
+        padding: 4px 8px;
+        height: 24px;
+        min-height: 24px;
+    }
+
+    .view-all-loc-btn {
+        width: 100%;
+        max-width: 280px;
+        font-size: 10px;
+        padding: 0 20px;
+    }
+
+    .view-all-loc-wrap {
+        text-align: center;
+    }
+
+    /* Coming soon banner */
+    .store-coming-soon {
+        padding: clamp(50px, 10vw, 65px) clamp(16px, 4vw, 22px);
+    }
+
+    .coming-heading {
+        font-size: clamp(24px, 7vw, 32px);
+    }
+
+    .coming-text {
+        font-size: clamp(12px, 3.2vw, 14px);
+    }
+
+    .coming-btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .loc-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .store-hero {
+        margin-top: 62px;
+    }
+
+    .store-hero-title {
+        font-size: clamp(30px, 9vw, 42px);
+    }
+
+    .loc-card-title {
+        font-size: 13px;
+    }
+
+    .view-all-loc-btn {
+        font-size: 9px;
+    }
+}
+
+
+/* ==========================================================================
+   9. CONTACT SECTION — MOBILE STACKING
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    .contact-hero {
+        margin-top: 68px;
+        padding: clamp(50px, 10vw, 65px) clamp(16px, 4vw, 22px) clamp(55px, 11vw, 70px);
+    }
+
+    .contact-hero-title {
+        font-size: clamp(36px, 10vw, 52px);
+    }
+
+    .contact-hero-text {
+        font-size: clamp(13px, 3.5vw, 15px);
+    }
+
+    .contact-main-section {
+        padding: clamp(50px, 10vw, 65px) clamp(16px, 4vw, 20px) clamp(60px, 12vw, 75px);
+    }
+
+    .contact-main-inner {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .contact-info-heading {
+        font-size: clamp(26px, 7vw, 34px);
+    }
+
+    .contact-info-item {
+        gap: 12px;
+    }
+
+    .contact-info-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        font-size: 18px;
+    }
+
+    .info-value {
+        font-size: 13px;
+        word-break: break-word;
+    }
+
+    .whatsapp-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+        min-height: 50px;
+    }
+
+    .whatsapp-note {
+        font-size: 10px;
+    }
+
+    /* Contact form card */
+    .contact-form-card {
+        padding: clamp(24px, 5vw, 35px) clamp(18px, 4vw, 25px);
+        border-radius: 16px;
+    }
+
+    .form-card-heading {
+        font-size: clamp(26px, 7vw, 34px);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 14px 16px;
+        font-size: 14px;
+        min-height: 48px;
+    }
+
+    .form-group label {
+        font-size: 12px;
+    }
+
+    .form-submit-btn {
+        width: 100%;
+        justify-content: center;
+        min-height: 50px;
+        font-size: 12px;
+    }
+
+    .form-success-msg,
+    .form-error-msg {
+        font-size: 12px;
+        padding: 12px 14px;
+        word-break: break-word;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .contact-hero {
+        margin-top: 62px;
+    }
+
+    .contact-hero-title {
+        font-size: clamp(30px, 9vw, 42px);
+    }
+
+    .contact-info-heading {
+        font-size: clamp(24px, 6.5vw, 30px);
+    }
+
+    .form-card-heading {
+        font-size: clamp(24px, 6.5vw, 30px);
+    }
+}
+
+
+/* ==========================================================================
+   10. REVIEWS / SHARE YOUR EXPERIENCE — MOBILE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    .reviews-section {
+        padding: clamp(50px, 10vw, 65px) clamp(16px, 4vw, 20px) clamp(60px, 12vw, 75px);
+    }
+
+    .reviews-heading {
+        font-size: clamp(30px, 8vw, 42px);
+    }
+
+    .reviews-intro {
+        font-size: clamp(13px, 3.5vw, 15px);
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 45px;
+    }
+
+    .review-card {
+        padding: 24px 20px;
+    }
+
+    .review-text {
+        font-size: 13px;
+    }
+
+    /* Share experience form */
+    .share-experience {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: clamp(28px, 6vw, 40px) clamp(18px, 4vw, 28px);
+        border-radius: 16px;
+    }
+
+    .share-exp-heading {
+        font-size: clamp(24px, 6.5vw, 32px);
+    }
+
+    .share-exp-text {
+        font-size: clamp(12px, 3.2vw, 14px);
+    }
+
+    .exp-form-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .exp-input {
+        width: 100%;
+        padding: 14px 16px;
+        font-size: 14px;
+        min-height: 48px;
+    }
+
+    .exp-stars-pick {
+        justify-content: flex-start;
+        gap: 6px;
+    }
+
+    .exp-star {
+        font-size: 28px;
+        padding: 4px;
+        min-width: 36px;
+        min-height: 36px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .exp-textarea {
+        width: 100%;
+        padding: 14px 16px;
+        font-size: 14px;
+        min-height: 100px;
+    }
+
+    .exp-submit-btn {
+        width: 100%;
+        justify-content: center;
+        min-height: 50px;
+        font-size: 12px;
+    }
+
+    .exp-success,
+    .exp-error {
+        font-size: 12px;
+        word-break: break-word;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .reviews-heading {
+        font-size: clamp(26px, 7vw, 34px);
+    }
+
+    .share-exp-heading {
+        font-size: clamp(22px, 6vw, 28px);
+    }
+
+    .exp-star {
+        font-size: 24px;
+        min-width: 32px;
+        min-height: 32px;
+    }
+}
+
+
+/* ==========================================================================
+   11. FOOTER — MOBILE VERTICAL LAYOUT
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    .main-footer {
+        padding: clamp(45px, 9vw, 60px) clamp(16px, 4vw, 20px) clamp(25px, 5vw, 35px);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-logo {
+        width: clamp(80px, 20vw, 110px);
+        height: auto;
+    }
+
+    .footer-tagline {
+        font-size: clamp(12px, 3.2vw, 14px);
+    }
+
+    .footer-col h4 {
+        font-size: clamp(14px, 3.8vw, 16px);
+        margin-bottom: 14px;
+    }
+
+    .footer-links li {
+        margin-bottom: 8px;
+    }
+
+    .footer-links a {
+        font-size: clamp(12px, 3.2vw, 14px);
+        min-height: 36px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .footer-contact-text {
+        font-size: clamp(12px, 3.2vw, 13px);
+        word-break: break-word;
+    }
+
+    .footer-wa-btn {
+        min-height: 44px;
+        padding: 10px 18px;
+        font-size: 11px;
+    }
+
+    .footer-bottom p {
+        font-size: clamp(10px, 2.8vw, 12px);
+        padding: 0 10px;
+    }
+}
+
+
+/* ==========================================================================
+   12. SECTION ANCHORS & SCROLL MARGIN — MOBILE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    html {
+        scroll-padding-top: 68px;
+    }
+
+    .section-anchor {
+        scroll-margin-top: 68px;
+    }
+
+    section[id] {
+        scroll-margin-top: 68px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    html {
+        scroll-padding-top: 62px;
+    }
+
+    .section-anchor {
+        scroll-margin-top: 62px;
+    }
+
+    section[id] {
+        scroll-margin-top: 62px;
+    }
+}
+
+
+/* ==========================================================================
+   13. ANIMATIONS — MOBILE OPTIMIZED
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    /* Reduce transform distances on mobile for smoother feel */
+    .reveal {
+        transform: translateY(20px);
+    }
+
+    .reveal.active {
+        transform: translateY(0);
+    }
+
+    /* Reduce hover transforms */
+    .format-card:hover,
+    .kulfi-card:hover,
+    .review-card:hover,
+    .loc-card:hover {
+        transform: translateY(-3px);
+    }
+
+    /* Reduce badge float animation distance */
+    @keyframes badgeFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-4px); }
+    }
+}
+
+
+/* ==========================================================================
+   14. SPACING & TYPOGRAPHY GLOBAL MOBILE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    /* Ensure all sections don't overflow */
+    section,
+    .our-kulfis,
+    .hero,
+    .process-section,
+    .store-section,
+    .contact-main-section,
+    .reviews-section,
+    .story-section,
+    .why-section,
+    .main-footer {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    /* Better line heights on mobile */
+    p {
+        line-height: 1.7;
+    }
+
+    h1, h2, h3, h4 {
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+}
+
+
+/* ==========================================================================
+   15. INNER PAGES — MARGIN TOP FIX (page heroes behind fixed navbar)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    .page-hero,
+    .process-hero,
+    .store-hero,
+    .contact-hero {
+        margin-top: 68px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .page-hero,
+    .process-hero,
+    .store-hero,
+    .contact-hero {
+        margin-top: 62px;
+    }
+}
+
+
+/* ==========================================================================
+   16. SCROLL PROGRESS BAR — MOBILE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    .scroll-progress-bar {
+        height: 3px;
+    }
+}
+
+
+/* ==========================================================================
+   17. STORE LOCATION CARDS — TEXT OVERFLOW FIX
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    .store-loc-label {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .store-sub-label {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .store-count-pill {
+        font-size: 8.5px;
+    }
+
+    .store-sub-header {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .loc-no-results {
+        font-size: 13px;
+        padding: 20px 16px;
+    }
+}
+
+
+/* ==========================================================================
+   18. PRODUCT PAGE — NAV MENU FIX (product.html nav lacks id)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* product.html's nav lacks id="navMenu", ensure it's still hidden by default */
+    .product-page ~ .nav-menu,
+    body:has(.product-page) .nav-menu {
+        /* The same mobile styles apply via class selectors */
+    }
+}
+
+
+/* ==========================================================================
+   19. VERY SMALL SCREENS (320px)
+   ========================================================================== */
+
+@media (max-width: 340px) {
+
+    .navbar-container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    .logo-image {
+        width: 80px;
+        height: 50px;
+    }
+
+    .hero-content {
+        padding: 30px 12px 20px;
+    }
+
+    .hero-title {
+        font-size: 26px;
+    }
+
+    .hero-subtitle {
+        font-size: 15px;
+    }
+
+    .hero-description {
+        font-size: 11px;
+    }
+
+    .kulfis-header h2 {
+        font-size: 28px;
+    }
+
+    .our-kulfis {
+        padding: 40px 12px 50px;
+    }
+
+    .format-card h3 {
+        font-size: 16px;
+    }
+
+    .format-card p {
+        font-size: 10px;
+    }
+
+    .kulfi-details h3 {
+        font-size: 18px;
+    }
+
+    .contact-form-card {
+        padding: 22px 14px;
+    }
+
+    .form-card-heading {
+        font-size: 22px;
+    }
+
+    .share-experience {
+        padding: 24px 14px;
+    }
+
+    .store-section {
+        padding: 35px 12px 50px;
+    }
+}
+
+
+/* ==========================================================================
+   20. FIX FOR ABSOLUTE POSITIONED ELEMENTS CAUSING OVERFLOW
+   ========================================================================== */
+
+.hero,
+.page-hero,
+.process-hero,
+.store-hero,
+.contact-hero {
+    overflow: hidden;
+}
+
+.hero-image-area {
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+
+    /* Story image badge */
+    .story-img-badge {
+        position: absolute;
+        right: 5%;
+    }
+}
+

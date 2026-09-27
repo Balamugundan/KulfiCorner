@@ -277,10 +277,30 @@ if (typeof window !== "undefined") {
 
     // Mobile menu toggle for product.html
     const menuToggle = document.getElementById("menuToggle");
-    const navMenu = document.querySelector(".nav-menu");
+    const navMenu = document.getElementById("navMenu") || document.querySelector(".nav-menu");
     if (menuToggle && navMenu) {
-        menuToggle.addEventListener("click", () => {
-            navMenu.classList.toggle("show");
+        menuToggle.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const isShown = navMenu.classList.toggle("show");
+            menuToggle.setAttribute("aria-expanded", isShown);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", (e) => {
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target) && navMenu.classList.contains("show")) {
+                navMenu.classList.remove("show");
+                menuToggle.setAttribute("aria-expanded", "false");
+            }
+        });
+
+        // Close menu when clicking any nav link
+        const navLinks = navMenu.querySelectorAll(".nav-link");
+        navLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                navMenu.classList.remove("show");
+                menuToggle.setAttribute("aria-expanded", "false");
+            });
         });
     }
 }
+
