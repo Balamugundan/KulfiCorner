@@ -16,9 +16,6 @@
         rel="stylesheet"
     >
 
-    <!-- Leaflet Map CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="./style.css">
 
@@ -433,7 +430,7 @@
                         </div>
                     </div>
 
-                    <!-- 10 MALAI (CONFIRMED PRICE: 60) -->
+                    <!-- 10 MALAI -->
                     <div class="kulfi-card reveal reveal-delay-2">
                         <div class="kulfi-photo">
                             <img src="Malai.png" alt="Malai Kulfi">
@@ -444,7 +441,7 @@
                             <h3>Malai Kulfi – Large</h3>
                             <p>Rich, creamy and traditionally made with pure simmered milk.</p>
                             <div class="kulfi-footer">
-                                <strong>₹60</strong>
+                                <span class="kulfi-badge-format">Stick Kulfi</span>
                                 <a href="product.html?product=malai" class="details-btn">
                                     VIEW DETAILS <span>→</span>
                                 </a>
@@ -547,7 +544,7 @@
                         </div>
                     </div>
 
-                    <!-- 16 PISTA BADAM (CONFIRMED PRICE: 70) -->
+                    <!-- 16 PISTA BADAM -->
                     <div class="kulfi-card reveal reveal-delay-4">
                         <div class="kulfi-photo">
                             <img src="Pista padam.png" alt="Pista Badam Kulfi">
@@ -558,7 +555,7 @@
                             <h3>Pista Badam – Large</h3>
                             <p>Creamy kulfi enriched with pistachios and premium almonds.</p>
                             <div class="kulfi-footer">
-                                <strong>₹70</strong>
+                                <span class="kulfi-badge-format">Stick Kulfi</span>
                                 <a href="product.html?product=pistaBadam" class="details-btn">
                                     VIEW DETAILS <span>→</span>
                                 </a>
@@ -566,7 +563,7 @@
                         </div>
                     </div>
 
-                    <!-- 17 ROYAL KESAR PISTA (CONFIRMED PRICE: 70) -->
+                    <!-- 17 ROYAL KESAR PISTA -->
                     <div class="kulfi-card reveal reveal-delay-1">
                         <div class="kulfi-photo">
                             <img src="Kesar pista .png" alt="Royal Kesar Pista Kulfi">
@@ -577,7 +574,7 @@
                             <h3>Royal Kesar Pista – Large</h3>
                             <p>Aromatic saffron and crunchy pistachios with smooth kulfi base.</p>
                             <div class="kulfi-footer">
-                                <strong>₹70</strong>
+                                <span class="kulfi-badge-format">Stick Kulfi</span>
                                 <a href="product.html?product=kesarPista" class="details-btn">
                                     VIEW DETAILS <span>→</span>
                                 </a>
@@ -585,7 +582,7 @@
                         </div>
                     </div>
 
-                    <!-- 18 KESAR BADAM (CONFIRMED PRICE: 70) -->
+                    <!-- 18 KESAR BADAM -->
                     <div class="kulfi-card reveal reveal-delay-2">
                         <div class="kulfi-photo">
                             <img src="Kesar.png" alt="Kesar Badam Kulfi">
@@ -596,7 +593,7 @@
                             <h3>Kesar Badam – Large</h3>
                             <p>Fragrant saffron blended with premium crunchy almonds.</p>
                             <div class="kulfi-footer">
-                                <strong>₹70</strong>
+                                <span class="kulfi-badge-format">Stick Kulfi</span>
                                 <a href="product.html?product=kesarBadam" class="details-btn">
                                     VIEW DETAILS <span>→</span>
                                 </a>
@@ -653,7 +650,7 @@
                             <h3>Pot Kulfi</h3>
                             <p>Traditional slow-cooked kulfi served in an earthen clay pot (matka) for rustic aroma.</p>
                             <div class="kulfi-footer">
-                                <strong>₹70</strong>
+                                <span class="kulfi-badge-format">Pot Kulfi</span>
                                 <a href="product.html?product=potKulfi" class="details-btn">
                                     VIEW DETAILS <span>→</span>
                                 </a>
@@ -1140,6 +1137,10 @@
              5. STORE / LOCATIONS SECTION
         ====================================================== -->
 
+                <!-- =====================================================
+             5. STORE / LOCATIONS SECTION
+        ====================================================== -->
+
         <div id="store" class="section-anchor"></div>
 
         <section class="store-hero reveal">
@@ -1157,109 +1158,664 @@
         </section>
 
 
-        <!-- STORE MAP + LOCATIONS -->
+        <!-- STORE LOCATIONS SECTION -->
         <section class="store-section">
 
             <div class="store-section-inner">
 
-                <!-- MAP -->
-                <div class="store-map-wrap reveal">
-                    <div id="kulfiMap" class="kulfi-map"></div>
+                <!-- STORE SECTION HEADER -->
+                <div class="store-locations-header reveal">
+                    <span class="store-loc-line"></span>
+                    <span class="store-loc-label">STORE / OUR LOCATIONS <span class="store-count-pill">54 TOTAL</span></span>
+                    <span class="store-loc-line"></span>
                 </div>
 
-                <!-- LOCATION CARDS -->
-                <div class="store-locations-wrap">
+                <!-- SEARCH BAR -->
+                <div class="store-search-wrap">
+                    <span class="store-search-icon">🔍</span>
+                    <input
+                        type="text"
+                        id="locSearchInput"
+                        class="store-search-input"
+                        placeholder="Search by city (e.g. Chennai, Salem, Anna Nagar...)"
+                        aria-label="Search store locations"
+                    >
+                    <button type="button" id="locSearchClear" class="store-search-clear" aria-label="Clear search">✕</button>
+                </div>
 
-                    <div class="store-locations-header reveal">
-                        <span class="store-loc-line"></span>
-                        <span class="store-loc-label">OUR LOCATIONS</span>
-                        <span class="store-loc-line"></span>
+                <!-- NO RESULTS MESSAGE -->
+                <div id="locNoResults" class="loc-no-results">
+                    No location found.
+                </div>
+
+                <!-- CURRENT LOCATIONS (43) -->
+                <div class="store-group-wrap" id="currentGroup">
+                    <div class="store-sub-header">
+                        <span class="store-sub-line"></span>
+                        <span class="store-sub-label">CURRENT LOCATIONS <span class="store-count-pill">43</span></span>
+                        <span class="store-sub-line"></span>
+                    </div>
+                    <div class="loc-cards-grid" id="currentLocationsList">
+                        <!-- 01 Chennai -->
+                        <div class="loc-card" data-city="Chennai" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Chennai</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Chennai%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 02 Chengalpattu -->
+                        <div class="loc-card" data-city="Chengalpattu" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Chengalpattu</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Chengalpattu%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 03 Kancheepuram -->
+                        <div class="loc-card" data-city="Kancheepuram" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Kancheepuram</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Kancheepuram%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 04 Pondy -->
+                        <div class="loc-card" data-city="Pondy" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Pondy</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Pondy%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 05 Karaikkal -->
+                        <div class="loc-card" data-city="Karaikkal" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Karaikkal</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Karaikkal%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 06 Cuddalore -->
+                        <div class="loc-card" data-city="Cuddalore" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Cuddalore</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Cuddalore%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 07 Ulunthurpet -->
+                        <div class="loc-card" data-city="Ulunthurpet" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Ulunthurpet</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Ulunthurpet%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 08 Sirkali -->
+                        <div class="loc-card" data-city="Sirkali" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Sirkali</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Sirkali%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 09 Kumbakonam -->
+                        <div class="loc-card" data-city="Kumbakonam" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Kumbakonam</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Kumbakonam%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 10 Thanjavur -->
+                        <div class="loc-card" data-city="Thanjavur" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Thanjavur</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Thanjavur%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 11 Sankarapuram -->
+                        <div class="loc-card" data-city="Sankarapuram" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Sankarapuram</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Sankarapuram%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 12 Thirukovilur -->
+                        <div class="loc-card" data-city="Thirukovilur" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Thirukovilur</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Thirukovilur%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 13 Thiruvannamalai -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Thiruvannamalai" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Thiruvannamalai</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Thiruvannamalai%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 14 Salem -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Salem" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Salem</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Salem%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 15 Namakkal -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Namakkal" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Namakkal</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Namakkal%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 16 Rasipuram -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Rasipuram" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Rasipuram</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Rasipuram%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 17 Krishnagiri -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Krishnagiri" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Krishnagiri</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Krishnagiri%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 18 Tiruchengodu -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Tiruchengodu" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Tiruchengodu</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Tiruchengodu%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 19 Trichy -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Trichy" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Trichy</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Trichy%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 20 Thirukkattupalli -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Thirukkattupalli" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Thirukkattupalli</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Thirukkattupalli%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 21 Gandarvakkottai -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Gandarvakkottai" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Gandarvakkottai</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Gandarvakkottai%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 22 Orathanadu -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Orathanadu" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Orathanadu</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Orathanadu%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 23 Papanadu -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Papanadu" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Papanadu</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Papanadu%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 24 Mannargudi -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Mannargudi" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Mannargudi</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Mannargudi%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 25 Thiruvarur -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Thiruvarur" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Thiruvarur</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Thiruvarur%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 26 Musiri -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Musiri" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Musiri</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Musiri%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 27 Bodi -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Bodi" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Bodi</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Bodi%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 28 Andipatti -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Andipatti" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Andipatti</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Andipatti%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 29 Aranthangi -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Aranthangi" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Aranthangi</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Aranthangi%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 30 Bavani -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Bavani" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Bavani</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Bavani%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 31 Pudukkottai -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Pudukkottai" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Pudukkottai</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Pudukkottai%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 32 Muthupettai -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Muthupettai" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Muthupettai</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Muthupettai%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 33 Villupuram -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Villupuram" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Villupuram</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Villupuram%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 34 Velachery -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Velachery" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Velachery</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Velachery%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 35 Taramani -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Taramani" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Taramani</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Taramani%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 36 Mangadu -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Mangadu" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Mangadu</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Mangadu%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 37 Puzhudivakkam -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Puzhudivakkam" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Puzhudivakkam</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Puzhudivakkam%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 38 Kottivakkam -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Kottivakkam" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Kottivakkam</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Kottivakkam%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 39 Poonthamalli -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Poonthamalli" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Poonthamalli</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Poonthamalli%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 40 Royapuram -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Royapuram" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Royapuram</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Royapuram%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 41 Ennoor -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Ennoor" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Ennoor</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Ennoor%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 42 Thiruvotriyur -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Thiruvotriyur" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Thiruvotriyur</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Thiruvotriyur%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
+                        <!-- 43 Anna Nagar -->
+                        <div class="loc-card loc-extra is-hidden" data-city="Anna Nagar" data-status="current">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Anna Nagar</h4>
+                                    <p class="loc-card-status"><span class="status-dot"></span> Open Now</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com/?q=Anna%20Nagar%2C%20Tamil%20Nadu" target="_blank" rel="noopener" class="loc-view-btn">VIEW LOCATION <span>&rarr;</span></a>
+                        </div>
                     </div>
 
-                    <div class="location-cards-grid">
+                    <!-- VIEW ALL CURRENT LOCATIONS BUTTON -->
+                    <div class="view-all-loc-wrap" id="currentViewAllWrap">
+                        <button type="button" id="viewAllCurrentBtn" class="view-all-loc-btn">
+                            VIEW ALL LOCATIONS +
+                        </button>
+                    </div>
+                </div>
 
-                        <!-- THANJAVUR -->
-                        <div class="location-card reveal reveal-delay-1" data-lat="10.7870" data-lng="79.1378">
-                            <div class="location-card-top">
-                                <div class="location-pin-icon">📍</div>
-                                <div class="location-card-info">
-                                    <h3>Thanjavur</h3>
-                                    <p class="location-address">Tamil Nadu, India</p>
-                                    <p class="location-status"><span class="status-dot"></span> Open Now</p>
+                <!-- UPCOMING LOCATIONS (11) -->
+                <div class="store-group-wrap" id="upcomingGroup">
+                    <div class="store-sub-header">
+                        <span class="store-sub-line"></span>
+                        <span class="store-sub-label upcoming-label">UPCOMING LOCATIONS <span class="store-count-pill">11</span></span>
+                        <span class="store-sub-line"></span>
+                    </div>
+                    <div class="loc-cards-grid" id="upcomingLocationsList">
+                        <!-- 01 Thirumangalam -->
+                        <div class="loc-card upcoming" data-city="Thirumangalam" data-status="upcoming">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Thirumangalam</h4>
+                                    <p class="loc-card-status upcoming-status"><span class="status-dot-amber"></span> Upcoming</p>
                                 </div>
                             </div>
-                            <a
-                                href="https://maps.google.com/?q=Thanjavur,Tamil+Nadu"
-                                target="_blank"
-                                rel="noopener"
-                                class="location-btn"
-                            >
-                                VIEW LOCATION <span>→</span>
-                            </a>
+                            <span class="loc-view-btn upcoming-btn">COMING SOON</span>
                         </div>
-
-                        <!-- KUMBAKONAM -->
-                        <div class="location-card reveal reveal-delay-2" data-lat="10.9602" data-lng="79.3845">
-                            <div class="location-card-top">
-                                <div class="location-pin-icon">📍</div>
-                                <div class="location-card-info">
-                                    <h3>Kumbakonam</h3>
-                                    <p class="location-address">Tamil Nadu, India</p>
-                                    <p class="location-status"><span class="status-dot"></span> Open Now</p>
+                        <!-- 02 Aruppukottai -->
+                        <div class="loc-card upcoming" data-city="Aruppukottai" data-status="upcoming">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Aruppukottai</h4>
+                                    <p class="loc-card-status upcoming-status"><span class="status-dot-amber"></span> Upcoming</p>
                                 </div>
                             </div>
-                            <a
-                                href="https://maps.google.com/?q=Kumbakonam,Tamil+Nadu"
-                                target="_blank"
-                                rel="noopener"
-                                class="location-btn"
-                            >
-                                VIEW LOCATION <span>→</span>
-                            </a>
+                            <span class="loc-view-btn upcoming-btn">COMING SOON</span>
                         </div>
-
-                        <!-- COIMBATORE -->
-                        <div class="location-card reveal reveal-delay-3" data-lat="11.0168" data-lng="76.9558">
-                            <div class="location-card-top">
-                                <div class="location-pin-icon">📍</div>
-                                <div class="location-card-info">
-                                    <h3>Coimbatore</h3>
-                                    <p class="location-address">Tamil Nadu, India</p>
-                                    <p class="location-status"><span class="status-dot"></span> Open Now</p>
+                        <!-- 03 Kovilpatti -->
+                        <div class="loc-card upcoming" data-city="Kovilpatti" data-status="upcoming">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Kovilpatti</h4>
+                                    <p class="loc-card-status upcoming-status"><span class="status-dot-amber"></span> Upcoming</p>
                                 </div>
                             </div>
-                            <a
-                                href="https://maps.google.com/?q=Coimbatore,Tamil+Nadu"
-                                target="_blank"
-                                rel="noopener"
-                                class="location-btn"
-                            >
-                                VIEW LOCATION <span>→</span>
-                            </a>
+                            <span class="loc-view-btn upcoming-btn">COMING SOON</span>
                         </div>
-
-                        <!-- OOTY -->
-                        <div class="location-card reveal reveal-delay-4" data-lat="11.4102" data-lng="76.6950">
-                            <div class="location-card-top">
-                                <div class="location-pin-icon">📍</div>
-                                <div class="location-card-info">
-                                    <h3>Ooty</h3>
-                                    <p class="location-address">Tamil Nadu, India</p>
-                                    <p class="location-status"><span class="status-dot"></span> Open Now</p>
+                        <!-- 04 Sankagiri -->
+                        <div class="loc-card upcoming" data-city="Sankagiri" data-status="upcoming">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Sankagiri</h4>
+                                    <p class="loc-card-status upcoming-status"><span class="status-dot-amber"></span> Upcoming</p>
                                 </div>
                             </div>
-                            <a
-                                href="https://maps.google.com/?q=Ooty,Tamil+Nadu"
-                                target="_blank"
-                                rel="noopener"
-                                class="location-btn"
-                            >
-                                VIEW LOCATION <span>→</span>
-                            </a>
+                            <span class="loc-view-btn upcoming-btn">COMING SOON</span>
                         </div>
-
+                        <!-- 05 Erode -->
+                        <div class="loc-card upcoming" data-city="Erode" data-status="upcoming">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Erode</h4>
+                                    <p class="loc-card-status upcoming-status"><span class="status-dot-amber"></span> Upcoming</p>
+                                </div>
+                            </div>
+                            <span class="loc-view-btn upcoming-btn">COMING SOON</span>
+                        </div>
+                        <!-- 06 Vellore -->
+                        <div class="loc-card upcoming" data-city="Vellore" data-status="upcoming">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Vellore</h4>
+                                    <p class="loc-card-status upcoming-status"><span class="status-dot-amber"></span> Upcoming</p>
+                                </div>
+                            </div>
+                            <span class="loc-view-btn upcoming-btn">COMING SOON</span>
+                        </div>
+                        <!-- 07 Katpadi -->
+                        <div class="loc-card upcoming loc-extra is-hidden" data-city="Katpadi" data-status="upcoming">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Katpadi</h4>
+                                    <p class="loc-card-status upcoming-status"><span class="status-dot-amber"></span> Upcoming</p>
+                                </div>
+                            </div>
+                            <span class="loc-view-btn upcoming-btn">COMING SOON</span>
+                        </div>
+                        <!-- 08 Perambalur -->
+                        <div class="loc-card upcoming loc-extra is-hidden" data-city="Perambalur" data-status="upcoming">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Perambalur</h4>
+                                    <p class="loc-card-status upcoming-status"><span class="status-dot-amber"></span> Upcoming</p>
+                                </div>
+                            </div>
+                            <span class="loc-view-btn upcoming-btn">COMING SOON</span>
+                        </div>
+                        <!-- 09 T Nagar -->
+                        <div class="loc-card upcoming loc-extra is-hidden" data-city="T Nagar" data-status="upcoming">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">T Nagar</h4>
+                                    <p class="loc-card-status upcoming-status"><span class="status-dot-amber"></span> Upcoming</p>
+                                </div>
+                            </div>
+                            <span class="loc-view-btn upcoming-btn">COMING SOON</span>
+                        </div>
+                        <!-- 10 Maraimalai Nagar -->
+                        <div class="loc-card upcoming loc-extra is-hidden" data-city="Maraimalai Nagar" data-status="upcoming">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Maraimalai Nagar</h4>
+                                    <p class="loc-card-status upcoming-status"><span class="status-dot-amber"></span> Upcoming</p>
+                                </div>
+                            </div>
+                            <span class="loc-view-btn upcoming-btn">COMING SOON</span>
+                        </div>
+                        <!-- 11 Mahindra City -->
+                        <div class="loc-card upcoming loc-extra is-hidden" data-city="Mahindra City" data-status="upcoming">
+                            <div class="loc-card-header">
+                                <span class="loc-pin">📍</span>
+                                <div class="loc-card-text">
+                                    <h4 class="loc-card-title">Mahindra City</h4>
+                                    <p class="loc-card-status upcoming-status"><span class="status-dot-amber"></span> Upcoming</p>
+                                </div>
+                            </div>
+                            <span class="loc-view-btn upcoming-btn">COMING SOON</span>
+                        </div>
                     </div>
 
+                    <!-- VIEW ALL UPCOMING LOCATIONS BUTTON -->
+                    <div class="view-all-loc-wrap" id="upcomingViewAllWrap">
+                        <button type="button" id="viewAllUpcomingBtn" class="view-all-loc-btn">
+                            VIEW ALL LOCATIONS +
+                        </button>
+                    </div>
                 </div>
 
             </div>
@@ -1321,7 +1877,7 @@
                             <div class="contact-info-icon">📞</div>
                             <div class="contact-info-text">
                                 <span class="info-type">Phone</span>
-                                <a href="tel:+919999999999" class="info-value">+91 99999 99999</a>
+                                <a href="tel:+919942257422" class="info-value">+91 99422 57422</a>
                             </div>
                         </div>
 
@@ -1329,7 +1885,7 @@
                             <div class="contact-info-icon">✉️</div>
                             <div class="contact-info-text">
                                 <span class="info-type">Email</span>
-                                <a href="mailto:hello@kulficorner.in" class="info-value">hello@kulficorner.in</a>
+                                <a href="mailto:kulficorner.official@gmail.com" class="info-value">kulficorner.official@gmail.com</a>
                             </div>
                         </div>
 
@@ -1337,7 +1893,7 @@
                             <div class="contact-info-icon">📍</div>
                             <div class="contact-info-text">
                                 <span class="info-type">Locations</span>
-                                <span class="info-value">Thanjavur · Kumbakonam · Coimbatore · Ooty</span>
+                                <span class="info-value">43+ Locations Across Tamil Nadu</span>
                             </div>
                         </div>
 
@@ -1345,7 +1901,7 @@
                             <div class="contact-info-icon">🕐</div>
                             <div class="contact-info-text">
                                 <span class="info-type">Store Hours</span>
-                                <span class="info-value">Daily: 11:00 AM – 10:00 PM</span>
+                                <span class="info-value">Daily: 10:00 AM – 7:30 PM</span>
                             </div>
                         </div>
 
@@ -1353,7 +1909,7 @@
 
                     <!-- WHATSAPP BUTTON -->
                     <a
-                        href="https://wa.me/919999999999?text=Hi%20Kulfi%20Corner!%20I%20have%20an%20enquiry."
+                        href="https://wa.me/919942257422?text=Hi%20Kulfi%20Corner!%20I%20have%20an%20enquiry."
                         target="_blank"
                         rel="noopener"
                         class="whatsapp-btn"
@@ -1428,7 +1984,10 @@
                             </button>
 
                             <p class="form-success-msg" id="formSuccess">
-                                ✓ Thank you! We'll get back to you soon.
+                                ✓ Thank you! Your enquiry has been sent successfully.
+                            </p>
+                            <p class="form-error-msg" id="formError">
+                                Something went wrong. Please try again.
                             </p>
 
                         </form>
@@ -1489,7 +2048,7 @@
                             <div class="review-avatar">A</div>
                             <div class="review-author-info">
                                 <strong>Arun M.</strong>
-                                <span>Coimbatore</span>
+                                <span>Pondy</span>
                             </div>
                         </div>
                     </div>
@@ -1505,7 +2064,7 @@
                             <div class="review-avatar">S</div>
                             <div class="review-author-info">
                                 <strong>Sunita K.</strong>
-                                <span>Ooty</span>
+                                <span>Chennai</span>
                             </div>
                         </div>
                     </div>
@@ -1550,7 +2109,10 @@
                             <span>→</span>
                         </button>
                         <p class="exp-success" id="expSuccess">
-                            ✓ Thank you for sharing your experience! We truly appreciate it.
+                            ✓ Thank you for sharing your experience!
+                        </p>
+                        <p class="exp-error" id="expError">
+                            Something went wrong. Please try again.
                         </p>
                     </div>
 
@@ -1618,12 +2180,12 @@
                 <div class="footer-col">
                     <h4>Get In Touch</h4>
                     <p class="footer-contact-text">
-                        <strong>Phone:</strong> +91 99999 99999<br>
-                        <strong>Email:</strong> hello@kulficorner.in<br>
-                        <strong>Hours:</strong> 11:00 AM – 10:00 PM
+                        <strong>Phone:</strong> +91 99422 57422<br>
+                        <strong>Email:</strong> kulficorner.official@gmail.com<br>
+                        <strong>Hours:</strong> 10:00 AM – 7:30 PM
                     </p>
                     <a
-                        href="https://wa.me/919999999999?text=Hi%20Kulfi%20Corner!"
+                        href="https://wa.me/919942257422?text=Hi%20Kulfi%20Corner!"
                         target="_blank"
                         rel="noopener"
                         class="footer-wa-btn"
@@ -1649,8 +2211,8 @@
                 SCRIPTS
     ====================================== -->
 
-    <!-- Leaflet JS for Map -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN2/WQ=" crossorigin=""></script>
+    <!-- Locations Data (Single Source of Truth) -->
+    <script src="./locations-data.js"></script>
 
     <!-- Main Navigation, Tabs & Scroll Script -->
     <script src="./script.js"></script>
